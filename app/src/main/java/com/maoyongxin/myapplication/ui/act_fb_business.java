@@ -15,6 +15,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -70,10 +71,10 @@ import top.zibin.luban.OnCompressListener;
 import static com.zhouyou.http.EasyHttp.getContext;
 
 public class act_fb_business extends BaseAct implements TimeAddTool.onBackDateTime, TimeAddTool.onBackAddr, TimeAddTool.onBackItem, TimeAddTool.onBackItem2 {
-    private TextView tv_typechoic,business_strtTime,business_strtDate,tv_adresschoice;
+    private TextView tv_typechoic, business_strtTime, business_strtDate, tv_adresschoice;
     private List<String> typeData = new ArrayList<>();
-    private List<String> startnoon=new ArrayList<>();
-    private List<String> startTime=new ArrayList<>();
+    private List<String> startnoon = new ArrayList<>();
+    private List<String> startTime = new ArrayList<>();
     private ClassifyApiBean typeBean;
     private String classify_id;
     private List<HotCity> hotCities;
@@ -81,7 +82,7 @@ public class act_fb_business extends BaseAct implements TimeAddTool.onBackDateTi
     private RxPermissions rxPermissions;
     private TextView business_detailEdit;
     private Button business_push;
-    private    Bundle detailImg ;
+    private Bundle detailImg;
     private String BusinessImgUrl;
 
     private static final int REQUEST_CODE_CHOOSE = 23;//定义请求码常量
@@ -94,18 +95,18 @@ public class act_fb_business extends BaseAct implements TimeAddTool.onBackDateTi
 
     @Override
     public int initLayoutId() {
-        return  (R.layout.activity_act_fb_business);
+        return (R.layout.activity_act_fb_business);
     }
 
     @Override
     public void initView() {
-        business_push=getViewAndClick(R.id.business_push);
-        tv_typechoic=getViewAndClick(R.id.tv_typechoic);
-        business_strtTime=getViewAndClick(R.id.business_strtTime);
-        business_strtDate=getViewAndClick(R.id.business_strtDate);
-        tv_adresschoice=getViewAndClick(R.id.tv_adresschoice);
-        businessImg=getViewAndClick(R.id.businessImg);
-        business_detailEdit=getViewAndClick(R.id.business_detailEdit);
+        business_push = getViewAndClick(R.id.business_push);
+        tv_typechoic = getViewAndClick(R.id.tv_typechoic);
+        business_strtTime = getViewAndClick(R.id.business_strtTime);
+        business_strtDate = getViewAndClick(R.id.business_strtDate);
+        tv_adresschoice = getViewAndClick(R.id.tv_adresschoice);
+        businessImg = getViewAndClick(R.id.businessImg);
+        business_detailEdit = getViewAndClick(R.id.business_detailEdit);
 
         rxPermissions = new RxPermissions(getActivity());
         hotCities = new ArrayList<>();
@@ -116,7 +117,9 @@ public class act_fb_business extends BaseAct implements TimeAddTool.onBackDateTi
         hotCities.add(new HotCity("深圳", "广东", "101280601"));
         hotCities.add(new HotCity("杭州", "浙江", "101210101"));
     }
+
     ZLoadingDialog dialog;
+
     @Override
     public void initData() {
 
@@ -131,17 +134,13 @@ public class act_fb_business extends BaseAct implements TimeAddTool.onBackDateTi
                 .setDialogBackgroundColor(Color.parseColor("#CCffffff")); // 设置背景色，默认白色
 
 
-
-
         postBackType();
 
-        for(int i =0;i<24;i++)
-        {
-            startnoon.add(i+" 点 ");
+        for (int i = 0; i < 24; i++) {
+            startnoon.add(i + " 点 ");
         }
-        for(int i=0;i<60;i++)
-        {
-            startTime.add(i+" 分 ");
+        for (int i = 0; i < 60; i++) {
+            startTime.add(i + " 分 ");
         }
     }
 
@@ -158,8 +157,7 @@ public class act_fb_business extends BaseAct implements TimeAddTool.onBackDateTi
     @Override
     public void onViewClick(View v) {
 
-        switch (v.getId())
-        {
+        switch (v.getId()) {
 
             case R.id.business_push:
 
@@ -167,15 +165,15 @@ public class act_fb_business extends BaseAct implements TimeAddTool.onBackDateTi
                 break;
             case R.id.business_detailEdit:
 
-                 Intent intent=new Intent (getActivity(),act_business_detailEdit.class);
+                Intent intent = new Intent(getActivity(), act_business_detailEdit.class);
 
 
-                startActivityForResult(intent ,REQUEST_CODE_Detail);
+                startActivityForResult(intent, REQUEST_CODE_Detail);
 
                 break;
 
             case R.id.businessImg:
-                rxPermissions .request(Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.CAMERA)
+                rxPermissions.request(Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.CAMERA)
                         .subscribe(new Consumer<Boolean>() {
                             @Override
                             public void accept(Boolean aBoolean) {
@@ -203,12 +201,12 @@ public class act_fb_business extends BaseAct implements TimeAddTool.onBackDateTi
 
                 break;
             case R.id.business_strtTime:
-                new TimeAddTool().initNoLinkOptionsPicker(this, startnoon,startTime,this);
+                new TimeAddTool().initNoLinkOptionsPicker(this, startnoon, startTime, this);
 
                 break;
 
             case R.id.tv_adresschoice:
-              // startActivityForResult(act_business_adress.class,25);
+                // startActivityForResult(act_business_adress.class,25);
 
                 CityPicker.from(getActivity())
                         .enableAnimation(false)
@@ -264,7 +262,7 @@ public class act_fb_business extends BaseAct implements TimeAddTool.onBackDateTi
     @Override
     public void backItem(int options) {
         tv_typechoic.setText(typeBean.getInfo().get(options).getName());
-        classify_id = typeBean.getInfo().get(options).getId()+"";
+        classify_id = typeBean.getInfo().get(options).getId() + "";
     }
 
 
@@ -287,13 +285,12 @@ public class act_fb_business extends BaseAct implements TimeAddTool.onBackDateTi
         });
 
 
-
     }
 
     @Override
     public void backItem(int options, int options1) {
 
-        business_strtTime.setText(startnoon.get(options)+startTime.get(options1));
+        business_strtTime.setText(startnoon.get(options) + startTime.get(options1));
 
     }
 
@@ -327,16 +324,15 @@ public class act_fb_business extends BaseAct implements TimeAddTool.onBackDateTi
                     Avatar(new File(imageUri));
                 }
             } else if (requestCode == REQUEST_CODE_Detail) {
-                if(resultCode == Activity.RESULT_OK) { // 对应B里面的标志为成功
-                    detailImg =  data.getExtras();
-                    String imgurl=detailImg.getString("content");
+                if (resultCode == Activity.RESULT_OK) { // 对应B里面的标志为成功
+                    detailImg = data.getExtras();
+                    String imgurl = detailImg.getString("content");
+                    Log.e("aa", "-----------返回值===" + imgurl);
                 }
 
 
             }
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
@@ -381,7 +377,6 @@ public class act_fb_business extends BaseAct implements TimeAddTool.onBackDateTi
     UploadImageBean imageBean;
 
 
-
     final UIProgressResponseCallBack listener = new UIProgressResponseCallBack() {
         @Override
         public void onUIResponseProgress(long bytesRead, long contentLength, boolean done) {
@@ -389,6 +384,7 @@ public class act_fb_business extends BaseAct implements TimeAddTool.onBackDateTi
             HttpLog.e(progress + "% ");
         }
     };
+
     public void postFile(File selectList) {
         params.put("file[" + 0 + "]", selectList, listener);
         EasyHttp.post("http://bisonchat.com/index/uploads/photosAll.html")
@@ -402,7 +398,7 @@ public class act_fb_business extends BaseAct implements TimeAddTool.onBackDateTi
                         imageBean = gons.fromJson(succeed, UploadImageBean.class);
                         if (imageBean.getMsg().contains("上传成功！")) {
                             Glide.with(context).load(ComantUtils.MyUrlHot1 + imageBean.getUrl().get(0)).into(businessImg);
-                            BusinessImgUrl=imageBean.getUrl().get(0);
+                            BusinessImgUrl = imageBean.getUrl().get(0);
                         }
                     }
 
@@ -424,8 +420,7 @@ public class act_fb_business extends BaseAct implements TimeAddTool.onBackDateTi
         }
     };
 
-    private  void  postBusiness()
-    {
+    private void postBusiness() {
 
         OkHttpUtils.post().url("http://bisonchat.com/index/commerce_activity/createCommerceActivityApi.html")
                 .addParams("img", "")
