@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginRight="@dimen/dip_10"
+    android:layout_marginTop="@dimen/dip_20"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dip_160"
+        android:background="@drawable/popwindow_bg"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:id="@+id/re_addfriends"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="0dip"
+            android:layout_marginLeft="14dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="18dp"
+            android:background="@color/white">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dip_10"
+                android:drawableLeft="@mipmap/pop_add"
+                android:drawablePadding="10dp"
+                android:text="@string/add_contacts"
+                android:textColor="@color/text_color"
+                android:textSize="@dimen/fond_14sp" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/re_scanner"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="0dip"
+            android:layout_marginLeft="14dp"
+            android:layout_marginRight="18dp"
+            android:background="@color/white"
+
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@mipmap/pop_group"
+                android:drawablePadding="10dp"
+                android:layout_marginTop="@dimen/dip_10"
+                android:text="服务号"
+                android:textColor="@color/text_color"
+                android:textSize="@dimen/fond_14sp" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/re_chatroom"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="0dip"
+            android:layout_marginLeft="14dp"
+            android:layout_marginRight="18dp"
+            android:background="@color/white">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@mipmap/pop_chat"
+                android:drawablePadding="10dp"
+                android:text="使用帮助"
+                android:layout_marginTop="@dimen/dip_10"
+                android:textColor="@color/text_color"
+                android:textSize="@dimen/fond_14sp" />
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>

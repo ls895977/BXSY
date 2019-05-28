@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="@color/white"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dip_40"
+        android:background="@color/white">
+
+        <ImageView
+            android:id="@+id/friends_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dip_10"
+            android:padding="@dimen/dip_5"
+            android:src="@mipmap/icon_friends_back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:background="@color/white"
+            android:text="发布动态"
+            android:textColor="@color/black_textview"
+            android:textSize="@dimen/textSize_big"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/publicshpictures_send"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dip_10"
+            android:background="@drawable/tv_send"
+            android:paddingLeft="@dimen/dip_10"
+            android:paddingTop="@dimen/dip_3"
+            android:gravity="center"
+            android:paddingRight="@dimen/dip_10"
+            android:paddingBottom="@dimen/dip_3"
+            android:src="@mipmap/pop_add"
+            android:text="发布"
+            android:textColor="@color/white"
+            android:textSize="@dimen/fond_14sp" />
+    </RelativeLayout>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dip_1"
+                android:background="#F2F2F2" />
+            <!--<com.sendtion.xrichtext.RichTextEditor-->
+            <!--android:id="@+id/publicshpictures_input"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginTop="@dimen/dip_20"-->
+            <!--android:background="@null"-->
+            <!--android:gravity="top"-->
+            <!--android:hint="请输入发布的内容"-->
+            <!--android:inputType="textMultiLine"-->
+            <!--android:minLines="5"-->
+            <!--android:paddingLeft="@dimen/dip_10"-->
+            <!--android:paddingRight="@dimen/dip_10"-->
+            <!--android:textColor="#FF666666"-->
+            <!--android:textSize="@dimen/fond_14sp" />-->
+            <io.github.rockerhieu.emojicon.EmojiconEditText
+                android:id="@+id/publicshpictures_input"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:background="@null"
+                android:gravity="start"
+                android:hint="请输入发布的内容"
+                android:padding="10dp"
+                android:textColor="@color/text_normal"
+                android:textSize="@dimen/textSize_normal" />
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycler_issue_column"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:overScrollMode="never" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dip_50"
+                android:layout_marginTop="@dimen/dip_10"
+                android:padding="@dimen/dip_10"
+                android:visibility="gone"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:drawableLeft="@mipmap/icon_lianjie"
+                    android:drawablePadding="@dimen/dip_10"
+                    android:text="跳转的公司"
+                    android:textColor="#FF3F7BF4"
+                    android:textSize="@dimen/fond_14sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:padding="@dimen/dip_5"
+                    android:src="@mipmap/icon_right" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dip_1"
+                android:layout_marginLeft="@dimen/dip_10"
+                android:layout_marginRight="@dimen/dip_10"
+                android:background="#F2F2F2" />
+
+            <RelativeLayout
+                android:id="@+id/my_addr"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dip_50"
+                android:padding="@dimen/dip_10">
+
+                <TextView
+                    android:id="@+id/curr_addr"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:drawableLeft="@mipmap/icon_addr1"
+                    android:drawablePadding="@dimen/dip_10"
+                    android:text="新加坡"
+                    android:textColor="#FF3F7BF4"
+                    android:textSize="@dimen/fond_14sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:padding="@dimen/dip_5"
+                    android:src="@mipmap/icon_right" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dip_1"
+                android:layout_marginLeft="@dimen/dip_10"
+                android:layout_marginRight="@dimen/dip_10"
+                android:background="#F2F2F2" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dip_50"
+                android:padding="@dimen/dip_10">
+
+                <TextView
+                    android:id="@+id/publicshpictures_status_itlte"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:drawablePadding="@dimen/dip_10"
+                    android:text="仅对自己可见"
+                    android:textColor="#FF3F7BF4"
+                    android:textSize="@dimen/fond_14sp" />
+                <TextView
+                    android:id="@+id/publicshpictures_status"
+                    android:layout_width="48dip"
+                    android:layout_height="28dip"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/tv_cb_chose" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dip_1"
+                android:layout_marginLeft="@dimen/dip_10"
+                android:layout_marginRight="@dimen/dip_10"
+                android:layout_marginBottom="60dp"
+                android:background="#F2F2F2" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

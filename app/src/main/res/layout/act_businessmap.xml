@@ -1,0 +1,158 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:fitsSystemWindows="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.amap.api.maps.TextureMapView
+            android:id="@+id/map"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="0dp"
+            android:transitionName="ditu_title">
+
+            <ImageView
+                android:id="@+id/img_centerAdd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/album_dp_4"
+                android:elevation="@dimen/album_dp_4"
+                android:paddingBottom="@dimen/dip_25"
+                android:src="@mipmap/icon_poi_add" />
+        </com.amap.api.maps.TextureMapView>
+
+        <LinearLayout
+            android:id="@+id/businessmap_seacher"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dip_30"
+            android:layout_marginTop="@dimen/dip_10"
+            android:layout_marginRight="@dimen/dip_60"
+            android:elevation="1dp"
+            android:orientation="horizontal"
+
+
+            >
+
+            <ImageView
+                android:id="@+id/friends_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/dip_10"
+                android:padding="@dimen/dip_5"
+                android:src="@mipmap/icon_friends_back" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/dip_10"
+                android:background="@drawable/bg_qiyelin"
+                android:orientation="horizontal"
+               android:focusable="true"
+                android:focusableInTouchMode="true"
+                >
+
+                <TextView
+                    android:layout_width="@dimen/dip_70"
+                    android:layout_height="@dimen/dip_30"
+                    android:background="@drawable/bg_qiye"
+                    android:gravity="center"
+                    android:text="企业"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/fond_14sp" />
+
+                <EditText
+                    android:id="@+id/edit_poi_search"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:hint="搜索企业"
+                    android:maxLines="1"
+                    android:paddingLeft="@dimen/dip_10"
+                    android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:textColorHint="#FF999999"
+                    android:textSize="@dimen/fond_14sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/businessmap_seacher"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="@dimen/dip_10"
+            android:background="#88ffffff"
+            android:elevation="1dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dip_5"
+                android:background="@drawable/bg_qiye_bg"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/dip_8"
+                android:paddingTop="@dimen/dip_2"
+                android:paddingRight="@dimen/dip_8"
+                android:paddingBottom="@dimen/dip_2">
+
+                <CheckBox
+                    android:id="@+id/vip_company"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:button="@drawable/cb_slelet"
+                    android:checked="true"
+                    android:paddingLeft="@dimen/dip_5"
+                    android:text="认证企业"
+                    android:textColor="#FF333333"
+                    android:textSize="@dimen/fond_11sp" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_qiye_bg"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/dip_8"
+                android:paddingTop="@dimen/dip_2"
+                android:paddingRight="@dimen/dip_8"
+                android:paddingBottom="@dimen/dip_2">
+
+                <CheckBox
+                    android:id="@+id/cus_company"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:button="@drawable/cb_slelet"
+                    android:checked="true"
+                    android:paddingLeft="@dimen/dip_5"
+                    android:text="普通企业"
+                    android:textColor="#FF333333"
+                    android:textSize="@dimen/fond_11sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dip_250"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/bg_qiye_bg1">
+        <ListView
+            android:id="@+id/list_poiResult"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_qiye_bg1" />
+    </RelativeLayout>
+</RelativeLayout>

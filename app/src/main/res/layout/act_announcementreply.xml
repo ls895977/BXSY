@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:fitsSystemWindows="true"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dip_40"
+        android:background="@color/white">
+
+        <ImageView
+            android:id="@+id/friends_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dip_10"
+            android:padding="@dimen/dip_5"
+            android:src="@mipmap/icon_friends_back" />
+
+        <TextView
+            android:id="@+id/btn_conversation_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:background="@color/white"
+            android:text="回复消息"
+            android:textColor="@color/black_textview"
+            android:textSize="@dimen/textSize_big"
+            android:textStyle="bold" />
+    </RelativeLayout>
+    <io.github.rockerhieu.emojicon.EmojiconEditText
+        android:id="@+id/ServicePublishing_Context"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:gravity="top"
+        android:hint="请输入您要回复的内容！"
+        android:minLines="10"
+        android:padding="@dimen/dip_10"
+        android:textColorHint="#FF999999"
+        android:textSize="@dimen/fond_14sp" />
+    <TextView
+        android:id="@+id/service_coomit"
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/dip_50"
+        android:background="@drawable/bg_radius_blue_tiny2"
+        android:layout_marginBottom="@dimen/dp_40"
+        android:text="提交"
+        android:textColor="@color/white"
+        android:textSize="@dimen/fond_16sp"
+        android:paddingTop="@dimen/dip_10"
+        android:layout_marginLeft="@dimen/dip_20"
+        android:layout_marginRight="@dimen/dip_20"
+        android:paddingBottom="@dimen/dip_10"
+        android:gravity="center"
+        android:layout_height="wrap_content" />
+</LinearLayout>

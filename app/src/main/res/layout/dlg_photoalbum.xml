@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/photoalbum_carme"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dip_216"
+        android:background="@drawable/shapbuttom"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <com.maoyongxin.myapplication.tool.clickanimview.BamLinearLayout
+            android:id="@+id/phonto_image"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="@dimen/dip_100"
+                android:layout_height="@dimen/dip_100"
+                android:src="@mipmap/i2" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="@dimen/dip_5"
+                android:text="图片"
+                android:textColor="#FF333333"
+                android:textSize="@dimen/fond_14sp" />
+        </com.maoyongxin.myapplication.tool.clickanimview.BamLinearLayout>
+
+        <com.maoyongxin.myapplication.tool.clickanimview.BamLinearLayout
+            android:id="@+id/phonto_video"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="@dimen/dip_100"
+                android:layout_height="@dimen/dip_100"
+                android:src="@mipmap/i1" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="@dimen/dip_5"
+                android:text="视频"
+                android:textColor="#FF333333"
+                android:textSize="@dimen/fond_14sp" />
+        </com.maoyongxin.myapplication.tool.clickanimview.BamLinearLayout>
+    </LinearLayout>
+</LinearLayout>

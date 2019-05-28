@@ -1,0 +1,147 @@
+apply plugin: 'com.android.application'
+android {
+    compileSdkVersion 27
+    buildToolsVersion '28.0.3'
+    defaultConfig {
+        applicationId "com.maoyongxin.myapplication"
+        minSdkVersion 21
+        targetSdkVersion 27
+        versionCode 389
+        versionName "3.8.9"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+        ndk {
+            //设置支持的so库架构 =李
+            abiFilters "armeabi-v7a", "x86"
+
+        }
+
+        manifestPlaceholders = [
+                JPUSH_PKGNAME : applicationId,
+                JPUSH_APPKEY  : "1f0b38d435b300587fa11ad0", //JPush上注册的包名对应的appkey.
+                JPUSH_CHANNEL : "developer-default", //暂时填写默认值即可.
+                TENCENT_APPID : "QQ开发者应用的appID",//腾讯开放平台注册应用得到的 appId
+                FACEBOOK_APPID: "appID",// facebook 注册应用得到的 appId
+                JSHARE_PKGNAME: applicationId,
+        ]
+    }
+    lintOptions {
+        checkReleaseBuilds false
+
+        abortOnError false
+    }
+    signingConfigs {
+        release {
+            storeFile file('chatApp.jks')
+            storePassword 'yiranaini'
+
+
+            keyAlias 'yiranaini'
+            keyPassword 'yiranaini'
+        }
+        debug {
+            storeFile file('chatApp.jks')
+            storePassword 'yiranaini'
+            keyAlias 'yiranaini'
+            keyPassword 'yiranaini'
+        }
+    }
+    allprojects {
+        repositories {
+            maven { url "https://jitpack.io" }
+            jcenter()
+        }
+    }
+    sourceSets {
+        main {
+            jni.srcDirs = []
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+}
+dependencies {
+    api 'jp.wasabeef:glide-transformations:2.0.1'
+    //高斯模糊
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation project(':aextreme')
+    implementation 'com.zhy:okhttputils:2.6.2'
+    implementation 'com.squareup.okhttp3:okhttp:3.9.0'
+    implementation 'com.google.code.gson:gson:2.8.5'
+    implementation project(':IMKit')
+    implementation project(':IMLib')
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    //noinspection GradleCompatible
+    implementation 'com.android.support:cardview-v7:27.1.1'
+    implementation project(':library')
+    implementation project(':baselibrary')
+    implementation 'org.xutils:xutils:3.4.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.10.0@jar'
+    implementation 'com.yanzhenjie:album:2.0.1'
+    //    RxJava
+    implementation 'io.reactivex.rxjava2:rxjava:2.1.3'
+    implementation 'com.nineoldandroids:library:2.4.0'
+    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-20'
+    implementation 'com.scwang.smartrefresh:SmartRefreshHeader:1.1.0-alpha-20'
+    //没有使用特殊Header，可以不加这行
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.34'
+    implementation 'com.makeramen:roundedimageview:2.3.0'
+    //    compile files('libs/pushservice-5.6.0.30.jar')
+    implementation 'cn.jiguang.sdk:jpush:3.1.3'
+    // 此处以JPush 3.1.1 版本为例。
+    implementation 'cn.jiguang.sdk:jcore:1.2.1'
+    // 此处以JCore 1.1.9 版本为例。
+    implementation 'cn.jiguang.sdk:jshare:1.5.0'
+    // 此处以 JShare 1.5.0 版本为例，具体版本请参考压缩包 libs 的 jar 包版本。
+    implementation 'cn.jiguang.sdk:jshare-qqmodel:1.5.0'
+    // 此处以 jshare-qqmodel 1.5.0  版本为例，具体版本请参考压缩包 libs 的 jar 包版本。
+    implementation 'cn.jiguang.sdk:jshare-wechatmodel:1.5.0'
+    // 此处以 jshare-wechatmodel 1.5.0  版本为例，具体版本请参考压缩包 libs 的 jar 包版本。
+    implementation 'cn.jiguang.sdk:jshare-sinamodel:1.5.0'
+    // 此处以 jshare-sinamodel 1.5.0  版本为例，具体版本请参考压缩包 libs 的 jar 包版本。
+    // compile 'cn.jiguang.sdk:jshare-facebookmodel:1.5.0'
+    // 此处以 jshare-facebookmodel 1.5.0  版本为例，具体版本请参考压缩包 libs 的 jar 包版本。
+    implementation 'cn.jiguang.sdk:jshare-twittermodel:1.5.0'
+    // 此处以 jshare-twittermodel 1.5.0  版本为例，具体版本请参考压缩包 libs 的 jar 包版本。
+    implementation 'cn.jiguang.sdk:jcore:1.1.7'
+    // 此处以 JCore 1.1.7 版本为例，具体版本请参考压缩包 libs 的 jar 包版本。
+    implementation 'cn.jzvd:jiaozivideoplayer:6.2.4'
+    //视频
+    implementation 'com.lzy.widget:view-core:0.2.1'
+    //hader+viewpager
+    implementation 'com.github.bumptech.glide:glide:4.0.0'
+    /*图片视频三方库*/
+    implementation 'com.github.LuckSiege.PictureSelector:picture_library:v2.2.3'
+    implementation 'com.zhouyou:rxeasyhttp:2.1.2'
+    implementation 'com.tencent.mm.opensdk:wechat-sdk-android-without-mta:+'
+    implementation project(':VideoRecorder')
+    implementation 'com.github.hackware1993:MagicIndicator:1.5.0'
+    implementation 'de.hdodenhof:circleimageview:2.1.0'
+    implementation 'com.jude:easyrecyclerview:4.4.2'
+    implementation 'me.codeboy.android:align-text-view:2.3.1'
+    implementation 'com.contrarywind:Android-PickerView:4.1.7'
+    implementation 'com.zyao89:zloading:1.2.0'
+    implementation 'com.lzy.widget:view-core:0.2.1'
+    implementation 'org.greenrobot:eventbus:3.1.1'
+    implementation('com.github.sendtion:XRichText:1.8') {
+        exclude group: 'com.android.support'
+        exclude group: 'com.github.bumptech.glide'
+    }
+    implementation 'com.zhihu.android:matisse:0.5.2-beta4'
+    //图片压缩工具
+    implementation 'top.zibin:Luban:1.1.8'
+    implementation 'com.zzhoujay.richtext:richtext:3.0.7'
+    implementation 'com.gyf.immersionbar:immersionbar:2.3.3'
+    implementation 'com.zzhoujay.richtext:richtext:latest-version'
+    implementation 'com.github.CarGuo.RickText:textUtilsLib:v2.1.5'
+    implementation 'com.android.support:design:26.0.0-alpha1'
+    implementation 'com.holidaycheck:permissify:1.0.0'
+    implementation 'com.android.support:support-v4:27.1.1'
+    // 基础依赖包
+    implementation 'com.gyf.immersionbar:immersionbar:3.0.0-beta01'
+    implementation files('libs/greendao-1.3.7.jar')
+    implementation 'com.lzy.net:okgo:3.0.4'
+    implementation 'com.github.chrisbanes:PhotoView:2.0.0'
+
+    implementation 'com.github.zaaach:CityPicker:2.0.3' //必选
+    implementation 'com.android.support:recyclerview-v7:27.1.1' //必选
+}

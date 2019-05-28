@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/line_header"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#ffffff"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/re_record"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:background="@drawable/btn_list_item_bg"
+        android:clickable="true">
+
+        <com.maoyongxin.myapplication.view.SelectableRoundedImageView
+            android:id="@+id/iv_avatar"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="12dp"
+            android:src="@mipmap/icon_record"
+            app:sriv_left_bottom_corner_radius="3dip"
+            app:sriv_left_top_corner_radius="3dip"
+            app:sriv_right_bottom_corner_radius="3dip"
+            app:sriv_right_top_corner_radius="3dip" />
+
+        <TextView
+            android:id="@+id/tv_newfriends"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="12dp"
+            android:layout_toRightOf="@id/iv_avatar"
+            android:text="@string/tv_record"
+            android:textColor="#353535"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tv_unread"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/unread_count_bg"
+            android:gravity="center"
+            android:text="1"
+            android:textColor="#ffffff"
+            android:textSize="12sp"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/re_group"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:background="@drawable/btn_list_item_bg"
+        android:clickable="true"
+        android:visibility="gone"
+        >
+        <com.maoyongxin.myapplication.view.SelectableRoundedImageView
+            android:id="@+id/iv_group"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="12dp"
+            android:src="@mipmap/default_group"
+            app:sriv_left_bottom_corner_radius="3dip"
+            app:sriv_left_top_corner_radius="3dip"
+            app:sriv_right_bottom_corner_radius="3dip"
+            app:sriv_right_top_corner_radius="3dip" />
+        <TextView
+            android:id="@+id/tv_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="12dp"
+            android:layout_toRightOf="@id/iv_group"
+            android:text="@string/groups"
+            android:textColor="#353535"
+            android:textSize="16sp" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dip_3"
+        android:background="#F2F2F2" />
+</LinearLayout>

@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.maoyongxin.myapplication">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" /> <!-- 蓝牙分享所需的权限 -->
+    <uses-permission
+        android:name="android.permission.WRITE_APN_SETTINGS"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission
+        android:name="android.permission.INTERACT_ACROSS_USERS_FULL"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission
+        android:name="android.permission.WRITE_SETTINGS"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.CONNECTIVITY_CHANGE" />
+
+    <permission
+        android:name="com.maoyongxin.myapplication.permission.JPUSH_MESSAGE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="com.maoyongxin.myapplication.permission.JPUSH_MESSAGE" />
+    <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT" />
+    <uses-permission
+        android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" /> <!-- 用于开启 debug 版本的应用在6.0 系统上 层叠窗口权限 -->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+
+    <application
+        android:name=".common.MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/app_icon"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme"
+        tools:replace="android:allowBackup">
+        <activity android:name=".ui.act_business_detailEdit"></activity>
+        <activity android:name=".ui.act_business_adress" />
+        <activity
+            android:name=".ui.act_fb_business"
+            android:label="@string/title_activity_act_fb_business"
+            android:theme="@style/DefaultCityPickerTheme"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustPan" />
+        <activity android:name=".ui.Act_businessActive" />
+        <activity android:name=".ui.Act_recountPasswd" />
+        <activity android:name=".ui.Acti_findpasswd" /> <!-- 会话界面 -->
+        <activity
+            android:name=".ui.Act_Chat"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data
+                    android:host="com.maoyongxin.myapplication"
+                    android:pathPrefix="/conversation/"
+                    android:scheme="rong" />
+            </intent-filter>
+        </activity> <!-- 高德定位 -->
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="ca34143aa7666aeb1aa0009c15d0422f" />
+
+        <service android:name="com.amap.api.location.APSService" /> <!-- 微信 -->
+        <activity
+            android:name=".wxapi.WXEntryActivity"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:taskAffinity="net.sourceforge.simcpux"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" /> <!-- QQ -->
+        <activity
+            android:name="com.tencent.tauth.AuthActivity"
+            android:launchMode="singleTask"
+            android:noHistory="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="tencent101539710" />
+            </intent-filter>
+        </activity> <!-- QQ -->
+        <activity
+            android:name="com.tencent.connect.common.AssistActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="behind"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.maoyongxin.myapplication.FileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/rc_file_path" />
+        </provider>
+
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="ca34143aa7666aeb1aa0009c15d0422f" />
+        <meta-data
+            android:name="RONG_CLOUD_APP_KEY"
+            android:value="qd46yzrfqh55f" /> <!-- 聚合会话列表 -->
+        <activity
+            android:name=".ui.SubConversationListActivtiy"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data
+                    android:host="com.maoyongxin.myapplication"
+                    android:pathPrefix="/subconversationlist"
+                    android:scheme="rong" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name=".ui.service.PollingService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <receiver
+            android:name=".tool.NotificationReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="io.rong.push.intent.MESSAGE_ARRIVED" />
+                <action android:name="io.rong.push.intent.MI_MESSAGE_ARRIVED" />
+                <action android:name="io.rong.push.intent.MESSAGE_CLICKED" />
+                <action android:name="io.rong.push.intent.MI_MESSAGE_CLICKED" />
+            </intent-filter>
+        </receiver> <!-- User defined.  For test only  用户自定义接收消息器,3.0.7开始支持,目前新tag/alias接口设置结果会在该广播接收器对应的方法中回调 -->
+        <receiver android:name=".broadcast.MyJPushMessageReceiver">
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.RECEIVE_MESSAGE" />
+
+                <category android:name="com.maoyongxin.myapplication" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".broadcast.MyReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.REGISTRATION" /> <!-- Required  用户注册SDK的intent -->
+                <action android:name="cn.jpush.android.intent.MESSAGE_RECEIVED" /> <!-- Required  用户接收SDK消息的intent -->
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED" /> <!-- Required  用户接收SDK通知栏信息的intent -->
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_OPENED" /> <!-- Required  用户打开自定义通知栏的intent -->
+                <action android:name="cn.jpush.android.intent.CONNECTION" /> <!-- 接收网络变化 连接/断开 since 1.6.3 -->
+                <category android:name="com.maoyongxin.myapplication" />
+            </intent-filter>
+        </receiver> <!-- 欢迎页面 -->
+        <activity android:name=".ui.Act_Welcome">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity> <!-- 登录 -->
+        <activity android:name=".ui.Act_Login" /> <!-- 主界面 -->
+        <activity
+            android:name=".ui.MainActivity"
+            android:launchMode="singleTask"
+            android:windowSoftInputMode="adjustPan" /> <!-- 注册 -->
+        <activity android:name=".ui.Act_Register" /> <!-- 注册头像设置界面 -->
+        <activity android:name=".ui.Act_Regesite_Headim" /> <!-- 消息== 列表点击item聊天详情 -->
+        <activity
+            android:name=".ui.fgt.message.act.Act_FriendMessages"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustPan" /> <!-- 消息==添加好友 -->
+        <activity android:name=".ui.fgt.message.act.Act_FindAndSearch" /> <!-- 消息==彼信商会 -->
+        <activity android:name=".ui.fgt.message.act.Act_GroupList" /> <!-- 消息==通讯录 -->
+        <activity android:name=".ui.fgt.message.act.Act_MyFriends" /> <!-- 消息==申请记录 -->
+        <activity android:name=".ui.fgt.message.act.Act_ApplicationRecord" /> <!-- 消息=通讯录=我的群聊=查看更多的群组 -->
+        <activity android:name=".ui.fgt.message.act.Act_AllGroupList" /> <!-- 消息=通讯录=我的群聊=商会=创建商会 -->
+        <activity android:name=".ui.fgt.message.act.Act_CreateGroupSteopOne" /> <!-- 消息=通讯录=我的群聊=商会=创建商会二级页面 -->
+        <activity android:name=".ui.fgt.message.act.Act_CreateGroup" /> <!-- 消息=添加好友=条件查找=页面 -->
+        <activity android:name=".ui.fgt.message.act.Act_ConditionalLookup" /> <!-- 社区==动态=评论 -->
+        <activity android:name=".ui.fgt.community.act.Act_Comment_Detail" /> <!-- 社区==动态=评论=回复 -->
+        <activity android:name=".ui.fgt.community.act.Act_Dynamic_huifu" /> <!-- 社区==动态=item=公司地址浏览网页 -->
+        <activity android:name=".ui.fgt.community.act.Act_News_Web" /> <!-- 社区==动态=item=头像 -->
+        <activity android:name=".ui.fgt.message.act.Act_StrangerDetail" /> <!-- 社区==动态=item=视频浏览 -->
+        <activity android:name=".ui.fgt.community.act.Act_Video" /> <!-- 社区==动态=item=图片浏览 -->
+        <activity android:name=".ui.fgt.community.act.Act_ShowImageLIst" /> <!-- 社区==新闻=新闻详情 -->
+        <activity
+            android:name=".ui.fgt.community.act.Act_JournalismDetails"
+            android:theme="@style/AppTheme" /> <!-- 社区==动态=item=創業鏡囊 -->
+        <activity
+            android:name=".ui.fgt.community.act.Act_GroupChatDetailNew"
+            android:windowSoftInputMode="stateHidden|adjustResize" /> <!-- 社区==动态=发布动态 图文 -->
+        <activity
+            android:name=".ui.fgt.community.act.Act_PublishPictures"
+            android:windowSoftInputMode="adjustPan" /> <!-- 社区==动态=发布动态 视频 -->
+        <activity
+            android:name=".ui.fgt.community.act.Act_UploadVideo"
+            android:windowSoftInputMode="adjustPan" /> <!-- 社区==动态=发布动态 视频录制类 -->
+        <activity
+            android:name=".ui.fgt.community.act.Act_VideoRecording"
+            android:windowSoftInputMode="adjustPan" /> <!-- 社区==动态=发布动态 图文==我的位置 -->
+        <activity
+            android:name=".ui.fgt.community.act.Act_Location"
+            android:windowSoftInputMode="adjustPan" /> <!-- 社区==动态=动态详情页 -->
+        <activity
+            android:name=".ui.fgt.community.act.Act_DynamicDetail"
+            android:windowSoftInputMode="adjustPan" /> <!-- 社区==动态=话题（详情）页 -->
+        <activity
+            android:name=".ui.fgt.community.act.groupchatdetailnew.fgt.act.Act_TopicDetails"
+            android:windowSoftInputMode="adjustPan" /> <!-- 社区==动态=话题（发布 -->
+        <activity android:name=".ui.fgt.community.act.Act_TopicPublishing" /> <!-- 人脉=服务商= -->
+        <activity android:name=".ui.fgt.connection.act.Act_ServiceProvider" /> <!-- 人脉=服务商=服务商=搜索= -->
+        <activity
+            android:name=".ui.fgt.connection.act.Act_ServiceSearch"
+            android:windowSoftInputMode="adjustPan" /> <!-- 人脉=服务商=公告需求= -->
+        <activity android:name=".ui.fgt.connection.act.Act_AnnouncementRequirement" /> <!-- 人脉=服务商=公告==发布需求= -->
+        <activity
+            android:name=".ui.fgt.connection.act.Act_ServicePublishing"
+            android:windowSoftInputMode="adjustPan" /> <!-- 人脉=服务商=公告==公告需求详情= -->
+        <activity android:name=".ui.fgt.connection.act.Act_AnnouncementDetails" /> <!-- 人脉=服务商=公告==企业地图= -->
+        <activity
+            android:name=".ui.fgt.connection.act.Act_BusinessMap"
+            android:launchMode="singleTask"
+            android:windowSoftInputMode="adjustResize" /> <!-- 人脉=服务商=公告==企业详情= -->
+        <activity android:name=".ui.fgt.connection.act.Act_CompanyDetails" /> <!-- 人脉=服务商=公告==历史记录= -->
+        <activity android:name=".ui.fgt.connection.act.Act_HistoricalRecord" /> <!-- 人脉=服务商=公告需求=回复= -->
+        <activity android:name=".ui.fgt.connection.act.Act_AnnouncementReply" /> <!-- 我的==我要充值 -->
+        <activity android:name=".ui.fgt.min.act.Act_Recharge" /> <!-- 我的==账号设置 -->
+        <activity android:name=".ui.fgt.min.act.Act_AccountSettings" /> <!-- 我的==反馈意见 -->
+        <activity android:name=".ui.fgt.min.act.Act_Feedback" /> <!-- 我的==头像 -->
+        <activity
+            android:name=".ui.fgt.min.act.Act_UserEditNew"
+            android:windowSoftInputMode="adjustPan" /> <!-- 我的==小区名称 -->
+        <activity android:name=".ui.fgt.min.act.Act_AddressHomeCheck" /> <!-- 我的==关注 -->
+        <activity android:name=".ui.fgt.min.act.Act_Follow" /> <!-- 我的=服务号=团队信息 -->
+        <activity android:name=".ui.fgt.min.act.Act_TeamInformation" /> <!-- 我的=服务号=团队成员=人脉记录 -->
+        <activity android:name=".ui.fgt.min.act.Act_ComunityMateDetail" /> <!-- 我的=收藏 -->
+        <activity android:name=".ui.fgt.min.act.Act_MyCollection" />
+        <activity android:name=".ui.fgt.community.act.Act_Fwh_contact" /> <!-- <activity android:name=".ui.Act_new_comment"></activity> -->
+        <activity
+            android:name=".ui.Act_new_comment"
+            android:theme="@style/Theme.Design.Light.NoActionBar" />
+        <activity android:name=".ui.fgt.min.act.activity_creat_community" />
+        <activity android:name=".ui.fgt.min.act.CreatCommunityActivity" />
+        <activity android:name=".ui.CommunityMessageActivity" />
+        <activity android:name=".ui.ExpressCardActivity" /> <!-- 适配华为（huawei）刘海屏 -->
+        <meta-data
+            android:name="android.notch_support"
+            android:value="true" /> <!-- 适配小米（xiaomi）刘海屏 -->
+        <meta-data
+            android:name="notch.config"
+            android:value="portrait|landscape" />
+    </application>
+
+</manifest>

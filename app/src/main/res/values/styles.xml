@@ -1,0 +1,205 @@
+<resources>
+
+    <style name="AppTheme" parent="AppBaseTheme">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">#00ffffff</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="appBackground">@color/theme_bg</item>
+        <item name="appThemeColor">@color/colorPrimary</item>
+        <item name="appTitleSize">@dimen/txt_big</item>
+        <item name="appTitleColor">@color/colorAccent</item>
+        <item name="appTitleBarBg">@color/colorPrimary</item>
+        <item name="appLoadingDraw">@drawable/img_loading_circle</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@color/white</item>
+        <item name="android:windowContentTransitions">true</item>
+    </style>
+
+    <style name="recycler_style" parent="@android:style/Widget">
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_below">@+id/rl_title</item>
+        <item name="android:background">@color/white</item>
+        <item name="android:scrollbars">vertical</item>
+        <item name="android:scrollbarSize">7dp</item>
+        <item name="android:scrollbarStyle">outsideOverlay</item>
+        <item name="android:scrollbarThumbVertical">@drawable/scroll_thumb</item>
+        <item name="android:layoutAnimation">@anim/down_out</item>
+    </style>
+    <!--圆角头像-->
+    <declare-styleable name="SelectableRoundedImageView">
+        <attr name="sriv_left_top_corner_radius" format="dimension" />
+        <attr name="sriv_right_top_corner_radius" format="dimension" />
+        <attr name="sriv_left_bottom_corner_radius" format="dimension" />
+        <attr name="sriv_right_bottom_corner_radius" format="dimension" />
+        <attr name="sriv_border_width" format="dimension" />
+        <attr name="sriv_border_color" format="color" />
+        <attr name="sriv_oval" format="boolean" />
+        <attr name="android:scaleType" />
+    </declare-styleable>
+
+    <style name="btn_style" parent="@style/view_style">
+        <item name="android:textSize">18sp</item>
+        <item name="android:padding">12dp</item>
+    </style>
+
+    <style name="view_style" parent="@android:style/Widget">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_marginBottom">10dp</item>
+        <item name="android:layout_marginLeft">16dp</item>
+        <item name="android:layout_marginRight">16dp</item>
+    </style>
+
+    <style name="single_btn_style" parent="@style/btn_style">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@color/colorPrimary</item>
+    </style>
+
+    <style name="TitleBar.Main">
+        <item name="backgroundColor">@color/main_theme</item>
+        <item name="android:windowContentTransitions">true</item>
+        <item name="textColorCenter">@color/white</item>
+        <item name="textColorLeft">@color/white</item>
+        <item name="textColorRight">@color/white</item>
+        <item name="iconBack">@mipmap/ic_back_white</item>
+    </style>
+
+    <style name="PopupDialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowContentTransitions">true</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:background">@color/TRANSPARENT</item>
+        <item name="android:windowBackground">@color/TRANSPARENT</item>
+        <item name="android:windowAnimationStyle">@style/PopupAnimation</item>
+    </style>
+
+    <style name="PopupAnimation" parent="@android:style/Animation.Dialog">
+        <item name="android:windowEnterAnimation">@anim/push_up_in</item>
+        <item name="android:windowExitAnimation">@anim/push_up_out</item>
+    </style>
+
+    <style name="TitleBar">
+        <item name="height">48dp</item>
+        <item name="textSizeCenter">16</item>
+        <item name="textSizeLeft">14</item>
+        <item name="textSizeRight">14</item>
+        <item name="underlineColor">@color/stroke</item>
+        <item name="android:windowContentTransitions">true</item>
+        <item name="underlineHeight">0.67dp</item>
+    </style>
+
+    <style name="TitleBar.White">
+        <item name="backgroundColor">@color/white</item>
+        <item name="textColorCenter">@color/text_normal</item>
+        <item name="textColorLeft">@color/text_normal</item>
+        <item name="android:windowContentTransitions">true</item>
+        <item name="textColorRight">@color/text_normal</item>
+        <item name="iconBack">@mipmap/icon_back</item>
+    </style>
+    <!-- 右上角popupwindow -->
+    <style name="AnimationPreview">
+        <item name="android:windowEnterAnimation">@anim/fade_in</item>
+        <item name="android:windowExitAnimation">@anim/fade_out</item>
+    </style>
+
+    <declare-styleable name="SwitchButton">
+        <attr name="kswThumbDrawable" format="reference" />
+        <attr name="kswThumbColor" format="color|reference" />
+        <attr name="kswThumbMargin" format="dimension|reference" />
+        <attr name="kswThumbMarginTop" format="dimension|reference" />
+        <attr name="kswThumbMarginBottom" format="dimension|reference" />
+        <attr name="kswThumbMarginLeft" format="dimension|reference" />
+        <attr name="kswThumbMarginRight" format="dimension|reference" />
+        <attr name="kswThumbWidth" format="dimension|reference" />
+        <attr name="kswThumbHeight" format="dimension|reference" />
+        <attr name="kswThumbRadius" format="dimension|reference" />
+        <attr name="kswBackRadius" format="dimension|reference" />
+        <attr name="kswBackDrawable" format="reference" />
+        <attr name="kswBackColor" format="color|reference" />
+        <attr name="kswFadeBack" format="boolean" />
+        <attr name="kswBackMeasureRatio" format="float" />
+        <attr name="kswAnimationDuration" format="integer" />
+        <attr name="kswTintColor" format="color|reference" />
+        <attr name="kswTextOn" format="string" />
+        <attr name="kswTextOff" format="string" />
+        <attr name="kswTextMarginH" format="dimension" />
+    </declare-styleable>
+
+    <style name="SwitchButtonStyle">
+        <item name="android:paddingLeft">15dp</item>
+        <item name="android:paddingRight">15dp</item>
+        <item name="android:paddingTop">4dp</item>
+        <item name="android:paddingBottom">4dp</item>
+    </style>
+
+    <style name="AppTheme.Toolbar" parent="Widget.AppCompat.ActionBar">
+        <item name="android:layout_width">match_parent</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="ac_search_list_view_divider">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">#f0f0f6</item>
+        <item name="android:layout_marginLeft">14dp</item>
+        <item name="android:layout_marginRight">14dp</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="DefaultCityPickerTheme" parent="AppTheme">
+        <item name="cpCancelTextSize">@dimen/cp_cancel_text_size</item>
+        <item name="cpCancelTextColor">@color/cp_color_gray</item>
+
+        <item name="cpClearTextIcon">@mipmap/cp_icon_clear_all</item>
+        <item name="cpSearchTextSize">@dimen/cp_search_text_size</item>
+        <item name="cpSearchTextColor">@color/cp_color_gray_dark</item>
+        <item name="cpSearchHintText">@string/cp_search_hint_text</item>
+        <item name="cpSearchHintTextColor">@color/cp_color_gray_light</item>
+        <item name="cpSearchCursorDrawable">@color/cp_color_gray_dark</item>
+
+        <item name="cpListItemHeight">@dimen/cp_list_item_height</item>
+        <item name="cpListItemTextSize">@dimen/cp_list_item_text_size</item>
+        <item name="cpListItemTextColor">@color/cp_color_gray_deep</item>
+
+        <item name="cpEmptyIcon">@mipmap/cp_icon_empty</item>
+        <item name="cpEmptyIconWidth">@dimen/cp_empty_icon_width</item>
+        <item name="cpEmptyIconHeight">@dimen/cp_empty_icon_height</item>
+        <item name="cpEmptyText">@string/cp_no_result</item>
+        <item name="cpEmptyTextSize">@dimen/cp_empty_text_size</item>
+        <item name="cpEmptyTextColor">@color/cp_color_gray_deep</item>
+
+        <item name="cpGridItemBackground">@drawable/cp_grid_item_bg</item>
+        <item name="cpGridItemSpace">@dimen/cp_grid_item_space</item>
+
+        <item name="cpSectionHeight">@dimen/cp_section_height</item>
+        <item name="cpSectionTextSize">@dimen/cp_section_text_size</item>
+        <item name="cpSectionTextColor">@color/cp_color_gray</item>
+        <item name="cpSectionBackground">@color/cp_color_section_bg</item>
+
+        <item name="cpIndexBarTextSize">@dimen/cp_index_bar_text_size</item>
+        <item name="cpIndexBarNormalTextColor">@color/cp_color_gray</item>
+        <item name="cpIndexBarSelectedTextColor">@color/cp_color_gray_dark</item>
+
+        <item name="cpOverlayWidth">@dimen/cp_overlay_width</item>
+        <item name="cpOverlayHeight">@dimen/cp_overlay_height</item>
+        <item name="cpOverlayTextSize">@dimen/cp_overlay_text_size</item>
+        <item name="cpOverlayTextColor">@android:color/white</item>
+        <item name="cpOverlayBackground">@drawable/cp_overlay_bg</item>
+    </style>
+
+
+</resources>

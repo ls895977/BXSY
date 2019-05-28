@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dip_40"
+        android:background="@color/white">
+
+        <ImageView
+            android:id="@+id/feedback_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dip_10"
+            android:padding="@dimen/dip_5"
+            android:src="@mipmap/icon_friends_back" />
+
+        <TextView
+            android:id="@+id/btn_conversation_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:background="@color/white"
+            android:text="反馈建议"
+            android:textColor="@color/black_textview"
+            android:textSize="@dimen/textSize_big"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/et_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dip_10"
+            android:background="@drawable/bg_radius_feedback"
+            android:gravity="start"
+            android:hint="您的建议，是我们前进的动力！"
+            android:minHeight="300dp"
+            android:padding="@dimen/dip_10"
+            android:textColorHint="#999999"
+            android:textSize="@dimen/fond_14sp" />
+
+        <Button
+            android:id="@+id/bt_Sendmessage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dip_20"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="@dimen/dip_20"
+            android:background="@drawable/bg_radius_bt_feedback"
+            android:text="提  交"
+            android:textColor="@color/white_somoke" />
+
+    </LinearLayout>
+</LinearLayout>

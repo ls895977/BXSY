@@ -1,0 +1,97 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:paddingTop="@dimen/dip_20">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dip_40"
+        android:background="@color/white"
+        android:padding="@dimen/dip_5">
+
+        <TextView
+            android:id="@+id/btn_conversation_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:background="@color/white"
+            android:text="人脉"
+            android:textColor="@color/black_textview"
+            android:textSize="@dimen/textSize_big"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dip_220">
+
+        <com.amap.api.maps.TextureMapView
+            android:id="@+id/map"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:transitionName="ditu_title">
+
+            <ImageView
+                android:id="@+id/img_centerAdd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/album_dp_4"
+                android:elevation="@dimen/album_dp_4"
+                android:paddingBottom="@dimen/dip_25"
+                android:src="@mipmap/icon_poi_add" />
+        </com.amap.api.maps.TextureMapView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dip_30"
+            android:background="#70000000"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/dip_20"
+            android:text="彼信，为您建立双向沟通渠道"
+            android:textColor="@color/white"
+            android:textSize="@dimen/fond_12sp" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.maoyongxin.myapplication.tool.clickanimview.BamLinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/Service_provider"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dip_120"
+                android:layout_marginLeft="@dimen/dip_10"
+                android:layout_marginTop="@dimen/dip_10"
+                android:layout_marginRight="@dimen/dip_10"
+                android:background="@color/white"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/rmxw" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dip_01"
+                android:background="#FFEFF1F4" />
+        </com.maoyongxin.myapplication.tool.clickanimview.BamLinearLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/Connection_Recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            />
+    </LinearLayout>
+
+</LinearLayout>

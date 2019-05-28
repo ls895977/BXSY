@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.act_fb_business">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white_somoke"
+        android:paddingTop="?attr/actionBarSize"
+
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+
+
+            >
+            <ImageView
+                android:id="@+id/businessImg"
+                android:layout_width="match_parent"
+                android:layout_height="600px"
+
+                android:src="@mipmap/icon_takepicutre"
+                android:scaleType="center"
+                android:elevation="1dp"
+                android:layout_margin="3dp"
+                android:background="@color/white"
+                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingTop="12dp"
+                android:paddingBottom="12dp"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:layout_marginTop="5dp"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" 主  题 "
+                    android:layout_marginRight="20dp"
+                    android:textColor="@color/black"
+                    />
+                <EditText
+                    android:id="@+id/businessThame"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:hint="请输入活动主题"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingTop="12dp"
+                android:paddingBottom="12dp"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:layout_marginTop="5dp"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" 类  型 "
+                    android:layout_marginRight="20dp"
+                    android:textColor="@color/black"
+                    />
+                <TextView
+                    android:id="@+id/tv_typechoic"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="7"
+                    android:drawableEnd="@mipmap/icon_right"
+                    android:text="选择" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingTop="12dp"
+                android:paddingBottom="12dp"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:layout_marginTop="5dp"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" 日  期 "
+                    android:layout_marginRight="20dp"
+                    android:textColor="@color/black"
+                    />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    >
+
+                    <TextView
+                        android:id="@+id/business_strtDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="开 始 日 期 "
+                        android:layout_marginRight="20dp"
+                        android:textColor="@color/gray"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" 时  间 "
+                        android:layout_marginRight="20dp"
+                        android:textColor="@color/black"
+                        />
+
+                    <TextView
+                        android:id="@+id/business_strtTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="开 始 时 间 "
+                        android:layout_marginRight="20dp"
+                        android:textColor="@color/gray"
+                        />
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingTop="12dp"
+                android:paddingBottom="12dp"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:layout_marginTop="5dp"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" 城  市  "
+                    android:layout_marginRight="20dp"
+                    android:textColor="@color/black"
+                    />
+                <TextView
+                    android:id="@+id/tv_adresschoice"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:text="请选举办城市"
+                    android:drawableEnd="@mipmap/icon_right"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingTop="12dp"
+                android:paddingBottom="12dp"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:layout_marginTop="5dp"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" 地  址  "
+                    android:layout_marginRight="20dp"
+                    android:textColor="@color/black"
+                    />
+                <EditText
+                    android:id="@+id/business_adress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:hint="请输入详细地址"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingTop="12dp"
+                android:paddingBottom="12dp"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:layout_marginTop="5dp"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" 嘉  宾  "
+                    android:layout_marginRight="20dp"
+                    android:textColor="@color/black"
+                    />
+                <EditText
+                    android:id="@+id/business_guests"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:hint="请输入嘉宾介绍"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingTop="12dp"
+                android:paddingBottom="12dp"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:layout_marginTop="5dp"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" 详  情  "
+                    android:layout_marginRight="20dp"
+                    android:textColor="@color/black"
+                    />
+                <TextView
+                    android:id="@+id/business_detailEdit"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="7"
+                    android:drawableEnd="@mipmap/icon_right"
+                    android:text="编辑详情" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingTop="12dp"
+                android:paddingBottom="12dp"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:layout_marginTop="5dp"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" 电  话  "
+                    android:layout_marginRight="20dp"
+                    android:textColor="@color/black"
+                    />
+                <TextView
+                    android:id="@+id/business_contact"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="7"
+                    android:drawableEnd="@mipmap/icon_right"
+                    android:text="请输入联系方式" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingTop="12dp"
+                android:paddingBottom="12dp"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:layout_marginTop="5dp"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" 邮  箱  "
+                    android:layout_marginRight="20dp"
+                    android:textColor="@color/black"
+                    />
+                <TextView
+                    android:id="@+id/business_email"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="7"
+                    android:drawableEnd="@mipmap/icon_right"
+                    android:text="用于收集用户的报名信息等" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginTop="20dp"
+
+                >
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="预览"
+                    android:textColor="@color/white"
+                    android:background="@color/btn_yellow"
+                    android:layout_marginRight="20dp"
+                    />
+                <Button
+                    android:id="@+id/business_push"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="提交申请"
+                    android:textColor="@color/white"
+                    android:background="@color/btn_green"
+                    android:layout_marginLeft="20dp"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+
+
+
+
+
+
+</android.support.design.widget.CoordinatorLayout>

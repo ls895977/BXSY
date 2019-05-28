@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:padding="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <com.maoyongxin.myapplication.view.SelectableRoundedImageView
+            android:id="@+id/img_head_communityPerson"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:scaleType="centerCrop"
+            app:sriv_left_bottom_corner_radius="30dip"
+            app:sriv_left_top_corner_radius="30dip"
+            app:sriv_right_bottom_corner_radius="30dip"
+            app:sriv_right_top_corner_radius="30dip"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_gravity="left"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_communityPersonName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+
+                    android:textColor="@color/text_normal"
+                    android:textSize="@dimen/textSize_normal" />
+
+                <TextView
+
+                    android:id="@+id/tv_communityPersonType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+
+                    android:textColor="@color/main_theme"
+                    android:textSize="@dimen/textSize_normal" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_communityPersonNote"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:maxLines="1"
+                android:textColor="@color/text_deco"
+                android:textSize="@dimen/textSize_small" />
+
+            <TextView
+                android:id="@+id/tv_communityPersonAddress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:gravity="center_vertical"
+
+                android:maxLines="1"
+                android:textColor="@color/text_tips_color"
+                android:textSize="@dimen/textSize_small"
+                android:visibility="gone"/>
+        </LinearLayout>
+        <Button
+            android:id="@+id/bt_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:background="@color/def_sub_1_pink"
+
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp"
+            android:textColor="@color/white"
+
+            android:text="联络记录"/>
+        <Button
+            android:id="@+id/bt_chat"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:background="@color/blue_tiny"
+
+
+            android:textColor="@color/white"
+
+            android:text="聊天"/>
+    </LinearLayout>
+    <TextView
+        android:id="@+id/btn_deletCommunityPerson"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@null"
+
+
+        android:layout_gravity="right"
+        android:textColor="@color/blue_tiny"
+        android:visibility="gone"
+
+        android:textSize="@dimen/textSize_normal" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/white_somoke"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="5dp"
+        />
+</LinearLayout>

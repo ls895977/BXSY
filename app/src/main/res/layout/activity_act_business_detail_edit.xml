@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    tools:context=".ui.act_business_detailEdit">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dip_40"
+        android:background="@color/white">
+
+        <ImageView
+            android:id="@+id/friends_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dip_10"
+            android:padding="@dimen/dip_5"
+            android:src="@mipmap/icon_friends_back" />
+
+        <TextView
+            android:id="@+id/btn_conversation_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:background="@color/white"
+            android:text="发布话题"
+            android:textColor="@color/black_textview"
+            android:textSize="@dimen/textSize_big"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/fabu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dip_10"
+            android:background="@drawable/bg_radius_blue1"
+            android:paddingLeft="@dimen/dip_10"
+            android:paddingTop="@dimen/dip_3"
+            android:paddingRight="@dimen/dip_10"
+            android:paddingBottom="@dimen/dip_3"
+            android:text="发布"
+            android:textColor="@color/white"
+            android:textSize="@dimen/fond_14sp" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="请在下方编辑活动主题"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dip_1"
+                android:background="#f0f0f0" />
+
+            <com.sendtion.xrichtext.RichTextEditor
+                android:id="@+id/et_business_intro"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:rt_editor_image_bottom="10"
+                app:rt_editor_image_height="500"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                app:rt_editor_text_color="#FF333333"
+                app:rt_editor_text_init_hint="输入您想发布的内容"
+                app:rt_editor_text_size="14sp"/>
+
+            <ImageView
+                android:id="@+id/addBusinessImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/dip_10"
+                android:src="@mipmap/addimg_1x" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

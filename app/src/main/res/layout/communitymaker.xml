@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@null"
+    android:orientation="vertical">
+    <TextView
+        android:id="@+id/marker_tv_community"
+        android:layout_width="wrap_content"
+        android:text="上清开的"
+        android:paddingLeft="@dimen/dip_5"
+        android:paddingRight="@dimen/dip_5"
+        android:paddingTop="@dimen/dip_2"
+        android:paddingBottom="@dimen/dip_2"
+        android:textColor="@color/white"
+        android:textSize="@dimen/fond_10sp"
+        android:background="@drawable/bg_radius_blue1"
+        android:layout_height="wrap_content" />
+    <ImageView
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:src="@mipmap/icon_weirenzhi"
+        android:layout_height="wrap_content" />
+</LinearLayout>

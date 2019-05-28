@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.ExpressCardActivity">
+    <include layout="@layout/include_title_bar" />
+
+    <RelativeLayout
+        android:id="@+id/rl_root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/rl_title">
+
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/vp_card"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="40dp"
+            android:clipChildren="true"
+            android:overScrollMode="never" />
+
+        <LinearLayout
+            android:id="@+id/ll_console"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal">
+
+            <com.maoyongxin.myapplication.tool.clickanimview.BamRelativeLayout
+                android:id="@+id/rl_show_card"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="20dp"
+                android:layout_weight="1"
+                android:background="@color/colorWhite_tD"
+                android:padding="10dp"
+                android:translationZ="@dimen/item_translation_z">
+
+                <TextView
+                    android:id="@+id/tv_show_card_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="出场效果："
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:id="@+id/iv_show_card_arrow"
+                    android:layout_width="18dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/tv_show_card_title"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignTop="@+id/tv_show_card_title"
+                    android:scaleType="fitCenter"
+                    />
+
+                <com.maoyongxin.myapplication.tool.clickanimview.BamButton
+                    android:id="@+id/btn_show_card_inproperorder"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_show_card_title"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/colorPrimary"
+                    android:padding="2dp"
+                    android:text="逐一效果"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
+
+                <com.maoyongxin.myapplication.tool.clickanimview.BamButton
+                    android:id="@+id/btn_show_card_unfold"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/btn_show_card_inproperorder"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/colorPrimary"
+                    android:text="展开效果"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
+
+                <com.maoyongxin.myapplication.tool.clickanimview.BamButton
+                    android:id="@+id/btn_show_card_rotation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/btn_show_card_unfold"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/colorPrimary"
+                    android:text="旋转效果"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
+
+            </com.maoyongxin.myapplication.tool.clickanimview.BamRelativeLayout>
+
+            <com.maoyongxin.myapplication.tool.clickanimview.BamRelativeLayout
+                android:id="@+id/rl_change"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="20dp"
+                android:layout_weight="1"
+                android:background="@color/colorWhite_tD"
+                android:padding="10dp"
+                android:translationZ="@dimen/item_translation_z">
+
+                <TextView
+                    android:id="@+id/tv_change_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="切换效果："
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:id="@+id/iv_change_arrow"
+                    android:layout_width="18dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/tv_change_title"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignTop="@+id/tv_change_title"
+                    android:scaleType="fitCenter"
+                    />
+
+                <com.maoyongxin.myapplication.tool.clickanimview.BamButton
+                    android:id="@+id/btn_change_stack"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_change_title"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/colorPrimary"
+                    android:text="层叠效果"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
+
+                <com.maoyongxin.myapplication.tool.clickanimview.BamButton
+                    android:id="@+id/btn_change_scale"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/btn_change_stack"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/colorPrimary"
+                    android:text="缩放效果"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
+
+                <com.maoyongxin.myapplication.tool.clickanimview.BamButton
+                    android:id="@+id/btn_change_windmill"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/btn_change_scale"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/colorPrimary"
+                    android:text="风车效果"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
+
+            </com.maoyongxin.myapplication.tool.clickanimview.BamRelativeLayout>
+
+        </LinearLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

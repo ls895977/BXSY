@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tl="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+
+    android:layout_height="match_parent"
+    android:backgroundTint="@color/white"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:paddingLeft="@dimen/dip_5"
+        android:paddingRight="@dimen/dip_5"
+
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+        <LinearLayout
+           android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:paddingTop="30dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/dip_35"
+                android:layout_height="@dimen/dip_35"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="5dp"
+                android:background="@null"
+                android:src="@mipmap/app_icon" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dp"
+                    android:text="Bison Business"
+                    android:textColor="#747474"
+                    android:textSize="@dimen/fond_13sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:text="家有良田万顷，不如彼此有信"
+                    android:textColor="#747474"
+                    android:textSize="@dimen/fond_10sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <com.maoyongxin.myapplication.view.ViewPagerDoubleIndicator
+            android:id="@+id/linTopindicator"
+            android:layout_width="@dimen/dip_80"
+
+            android:layout_marginRight="@dimen/dip_10"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dip_5"
+            android:layout_alignParentRight="true"
+            android:background="@null"
+            android:layout_centerVertical="true"
+            android:orientation="horizontal"
+            android:paddingTop="30dp"
+            >
+            <Button
+                android:id="@+id/btn_renmai"
+                android:layout_width="0dip"
+                android:layout_weight="1"
+                android:textStyle="bold"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:gravity="center"
+                android:text="动态"
+                android:textColor="@color/black_textview"
+                android:textSize="@dimen/textSize_normal"
+               />
+
+            <Button
+                android:id="@+id/btn_renmai_list"
+                android:layout_width="0dip"
+                android:layout_weight="1"
+                android:textStyle="bold"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:gravity="center"
+                android:text="新闻"
+                android:textColor="@color/stroke_heavy"
+                android:textSize="@dimen/textSize_normal"
+               />
+        </com.maoyongxin.myapplication.view.ViewPagerDoubleIndicator>
+    </RelativeLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/remmai_viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:backgroundTint="@color/white" />
+</LinearLayout>

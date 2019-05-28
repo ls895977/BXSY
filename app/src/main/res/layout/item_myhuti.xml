@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dip_1"
+        android:background="#FFEFF1F4" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/dip_10">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/mine_header"
+                android:layout_width="@dimen/dip_30"
+                android:layout_height="@dimen/dip_30"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/huangye"
+                app:riv_border_color="#333333"
+                app:riv_corner_radius="@dimen/dip_60"
+                app:riv_mutate_background="true"
+                app:riv_tile_mode="repeat" />
+
+            <TextView
+                android:id="@+id/nicke_Name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:paddingLeft="@dimen/dip_10"
+                android:text="创意总监-夏阳"
+                android:textColor="#FF333333"
+                android:textSize="@dimen/fond_16sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lli_zan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/praise_num"
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="86"
+                android:textColor="#FF666666"
+                android:textSize="@dimen/fond_14sp" />
+
+            <TextView
+                android:id="@+id/zanImg"
+                android:layout_width="18dp"
+                android:visibility="gone"
+                android:layout_height="18dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginRight="@dimen/dip_5"
+                android:layout_marginBottom="4dp"
+                android:background="@drawable/good"
+                android:scaleType="centerCrop" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tvContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dip_50"
+        android:layout_marginRight="@dimen/dip_10"
+        android:text="今天我们聊聊创意与商业关系。有些创意，纯属个人兴趣，与商业价值无关。"
+        android:textColor="#FF666666"
+        android:textSize="@dimen/fond_14sp" />
+
+    <LinearLayout
+        android:id="@+id/itemMessage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dip_50"
+        android:layout_marginTop="@dimen/dip_10"
+        android:layout_marginRight="@dimen/dip_10"
+        android:background="#FFEFF1F4"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/dip_10"
+        android:paddingTop="@dimen/dip_5"
+        android:paddingRight="@dimen/dip_10"
+        android:paddingBottom="@dimen/dip_15">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/my_itemRecyclerview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dip_10"
+        android:layout_marginBottom="@dimen/dip_20">
+
+        <ImageView
+            android:id="@+id/item_delte"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/dip_10"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dip_10"
+            android:src="@mipmap/icon_dele" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dip_50"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/create_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="1月10号"
+                android:textColor="#FF999999"
+                android:textSize="@dimen/fond_11sp" />
+
+            <TextView
+                android:id="@+id/item_huifu"
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dip_10"
+                android:background="@drawable/boder_line"
+                android:paddingLeft="@dimen/dip_5"
+                android:paddingTop="@dimen/dip_2"
+                android:paddingRight="@dimen/dip_5"
+                android:paddingBottom="@dimen/dip_2"
+                android:text="回复"
+                android:textColor="#FF2F60F3"
+                android:textSize="@dimen/fond_12sp" />
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

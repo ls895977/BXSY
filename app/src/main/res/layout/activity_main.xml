@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/all_view_linlerlayout"
+    >
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/main_viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/white" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dip_1"
+        android:background="#F2F2F2" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dip_50"
+        android:layout_alignParentBottom="true">
+        <LinearLayout
+            android:id="@+id/main_button"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:orientation="horizontal"
+            android:padding="3dp"
+            android:paddingTop="@dimen/dip_2"
+            android:gravity="center_vertical"
+            >
+
+            <TextView
+                android:id="@+id/tab_mesg"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableTop="@drawable/tab_mesg"
+                android:gravity="center"
+                android:text="消息"
+                android:textColor="@drawable/main_fond" />
+
+            <TextView
+                android:id="@+id/tab_community"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableTop="@drawable/tab_community"
+                android:gravity="center"
+                android:text="社区"
+                android:textColor="@drawable/main_fond" />
+
+            <TextView
+                android:id="@+id/tab_connection"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableTop="@drawable/tab_connection"
+                android:drawablePadding="@dimen/dip_2"
+                android:gravity="center"
+                android:text="人脉"
+                android:textColor="@drawable/main_fond" />
+
+            <TextView
+                android:id="@+id/tab_min"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableTop="@drawable/tab_min"
+                android:drawablePadding="@dimen/dip_2"
+                android:gravity="center"
+                android:text="我的"
+                android:textColor="@drawable/main_fond" />
+        </LinearLayout>
+        <TextView
+            android:id="@+id/msg_number"
+            android:layout_width="15dp"
+            android:layout_marginLeft="@dimen/dip_60"
+            android:layout_marginTop="@dimen/dip_1"
+            android:layout_height="15dp"
+            android:background="@drawable/red_radio"
+            android:gravity="center"
+            android:visibility="gone"
+            android:text="111"
+            android:textColor="@color/white"
+            android:textSize="10sp" />
+    </RelativeLayout>
+</LinearLayout>

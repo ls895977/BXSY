@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.Act_businessActive"
+    android:background="@color/white"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="25dp"
+        android:background="@color/white"
+        >
+
+        <RelativeLayout
+            android:id="@+id/topbar"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="成都"
+                android:layout_centerVertical="true"
+
+           />
+            <TextView
+                android:id="@+id/business_mine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="我要办活动"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                />
+
+                >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_centerInParent="true"
+                android:orientation="horizontal"
+                android:padding="3dp"
+                android:gravity="center"
+
+                >
+                <ImageView
+                    android:id="@+id/appIcon"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@mipmap/app_icon"
+
+                    />
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginLeft="3dp"
+                    android:layout_gravity="center_vertical"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="活动汇"
+                        android:textColor="@color/black_textview"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/textSize_normal"
+
+
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/txt_small"
+                        android:text="彼信商业社区"
+
+
+                        />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+
+
+
+        </RelativeLayout>
+        <net.lucode.hackware.magicindicator.MagicIndicator
+            android:layout_below="@+id/topbar"
+            android:id="@+id/lindicator"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginTop="5dp" />
+
+
+
+        <android.support.v4.view.ViewPager
+            android:layout_below="@+id/lindicator"
+            android:id="@+id/view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+           />
+    </RelativeLayout>
+
+
+</android.support.constraint.ConstraintLayout>

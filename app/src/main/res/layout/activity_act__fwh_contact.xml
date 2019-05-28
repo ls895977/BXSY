@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        android:paddingLeft="15dp">
+        <TextView
+            android:id="@+id/img_back"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textSize="@dimen/textSize_normal"
+            android:textColor="@color/black_textview"
+            android:drawableLeft="@mipmap/icon_back"
+            android:drawablePadding="10dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            />
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@mipmap/app_icon"
+            android:layout_gravity="center"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="10dp"
+           />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="彼信商业社区"
+            android:textStyle="bold"
+            android:layout_marginRight="10dp"
+
+            />
+
+    </LinearLayout>
+    <ListView
+        android:id="@+id/lv_fuwuhao"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@color/background"
+        android:dividerHeight="0.1dp" />
+
+
+
+
+</LinearLayout>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/line_navi"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:padding="@dimen/dip_10">
+
+        <LinearLayout
+            android:id="@+id/line"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                >
+
+            <TextView
+                android:id="@+id/tv_poiName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="类型"
+                android:textColor="#FF333333"
+                android:textSize="@dimen/fond_16sp"
+                android:textStyle="bold" />
+                <ImageButton
+                    android:id="@+id/servicIcon"
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:src="@mipmap/serviceuser"
+
+                    android:layout_marginLeft="5dp"
+                    />
+            </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_poiType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:drawablePadding="@dimen/dip_5"
+        android:drawableLeft="@mipmap/icon_zhuyingyewu"
+        android:text="类型"
+        android:singleLine="true"
+        android:textColor="#FF666666"
+        android:textSize="@dimen/fond_16sp" />
+
+
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/dip_5">
+
+                <TextView
+                    android:id="@+id/tv_poiAddress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@mipmap/icon_addr"
+                    android:drawablePadding="@dimen/dip_5"
+                    android:singleLine="true"
+                    android:text="白云大道南段"
+                    android:textColor="#FF666666"
+                    android:textSize="@dimen/fond_12sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <TextView
+                android:id="@+id/tv_detail"
+                android:layout_width="@dimen/dip_50"
+                android:layout_height="@dimen/dip_20"
+                android:background="@drawable/bg_bt_qiye"
+                android:gravity="center"
+                android:text="详情"
+                android:textColor="@color/white"
+                android:textSize="@dimen/fond_12sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dip_01"
+        android:background="@color/background" />
+</LinearLayout>

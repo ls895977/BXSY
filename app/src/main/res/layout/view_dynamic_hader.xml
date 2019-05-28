@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#F2F2F2"
+        android:paddingTop="@dimen/dip_5"
+        android:paddingBottom="@dimen/dip_5">
+        <EditText
+            android:id="@+id/search"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dip_30"
+            android:layout_marginLeft="@dimen/dip_10"
+            android:background="@drawable/ms_seacher"
+            android:layout_marginRight="@dimen/dip_10"
+            android:drawableLeft="@mipmap/icon_ms_seacher"
+            android:drawablePadding="@dimen/dip_5"
+            android:hint="搜索社区或兴趣话题"
+            android:paddingLeft="@dimen/dip_10"
+            android:textSize="13sp" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dip_10"
+        android:textSize="@dimen/fond_14sp"
+        android:text="热门社区"
+        android:textColor="#4D4D4D" />
+
+    <HorizontalScrollView
+        android:paddingBottom="@dimen/dip_20"
+        android:layout_width="match_parent"
+        android:scrollbars="none"
+        android:layout_marginTop="@dimen/dip_10"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dip_10">
+        <LinearLayout
+            android:id="@+id/view_dynamic_hader_HorizontalScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"/>
+    </HorizontalScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:background="#F2F2F2"
+        android:layout_height="@dimen/dip_5" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_marginTop="@dimen/dip_5"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dip_10"
+        android:textSize="@dimen/fond_14sp"
+        android:text="热门话题"
+        android:textColor="#4D4D4D" />
+
+    <com.maoyongxin.myapplication.ui.fgt.community.view.WarpLinearLayout
+        android:id="@+id/view_dynamic_hader_WarpLinearLayout"
+        android:layout_width="match_parent"
+        android:gravity="center_horizontal"
+        android:layout_marginLeft="@dimen/dip_10"
+        android:layout_marginRight="@dimen/dip_10"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dip_20" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:background="#F2F2F2"
+        android:layout_height="@dimen/dip_5" />
+</LinearLayout>

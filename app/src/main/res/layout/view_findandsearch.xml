@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#F2F2F2"
+        android:paddingTop="@dimen/dip_8"
+        android:paddingBottom="@dimen/dip_8"
+
+        >
+
+        <EditText
+            android:id="@+id/search"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:background="@drawable/ms_seacher"
+            android:drawableLeft="@mipmap/icon_ms_seacher"
+            android:drawablePadding="@dimen/dip_5"
+            android:hint="查找账号/昵称/手机号"
+            android:paddingLeft="@dimen/dip_10"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:textSize="@dimen/textSize_small" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:background="@drawable/btn_list_item_bg"
+        android:clickable="true"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        >
+
+        <ImageView
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:layout_marginLeft="12dp"
+            android:src="@mipmap/icon_tongxunlv" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:layout_marginLeft="12dp"
+            android:layout_toRightOf="@id/iv_avatar"
+            android:text="添加通讯录好友"
+            android:textColor="#353535"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dip_1"
+        android:layout_marginLeft="@dimen/dip_10"
+        android:layout_marginRight="@dimen/dip_10"
+        android:background="#f0f0f0"
+        android:visibility="gone"
+        />
+    <FrameLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_list_item_bg"
+        android:orientation="vertical"
+        >
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:scaleType="centerCrop"
+            android:layout_gravity="center"
+            android:src="@mipmap/huangye" />
+
+       <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:layout_marginLeft="12dp"
+            android:layout_toRightOf="@id/iv_avatar"
+            android:text="彼有信，则有幸"
+            android:textColor="@color/white"
+           android:textStyle="italic"
+            android:textSize="30sp" />
+    </FrameLayout>
+    <LinearLayout
+        android:id="@+id/tv_addByTiaoJian"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:background="@drawable/btn_list_item_bg"
+        android:visibility="gone"
+        >
+
+        <ImageView
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:layout_marginLeft="12dp"
+            android:src="@mipmap/icon_tioajian" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:layout_marginLeft="12dp"
+            android:layout_toRightOf="@id/iv_avatar"
+            android:text="按条件查陌生人"
+            android:textColor="#353535"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_status"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dip_30"
+        android:background="#EFF1F4"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/dip_10"
+        android:text="可能感兴趣的人   " />
+</LinearLayout>

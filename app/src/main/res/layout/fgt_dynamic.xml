@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+    <ImageView
+        android:id="@+id/iv_popup_window_back"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFF5F7FA"
+        android:clickable="true"
+        android:translationZ="@dimen/window_backdrop_translation_z"
+        android:visibility="gone" />
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/refreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:srlEnableLoadMoreWhenContentNotFull="true">
+
+        <android.support.design.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white">
+
+
+            <android.support.design.widget.AppBarLayout
+                android:id="@+id/appbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                app:elevation="0dp">
+
+                <android.support.design.widget.CollapsingToolbarLayout
+                    android:id="@+id/fab"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/white"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#F2F2F2"
+                            android:paddingTop="@dimen/dip_5"
+                            android:paddingBottom="@dimen/dip_5"
+                            android:visibility="gone"
+                            >
+
+                            <EditText
+                                android:id="@+id/search"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/dip_30"
+                                android:layout_marginLeft="@dimen/dip_10"
+                                android:layout_marginRight="@dimen/dip_10"
+                                android:background="@drawable/ms_seacher"
+                                android:drawableLeft="@mipmap/icon_ms_seacher"
+                                android:drawablePadding="@dimen/dip_5"
+                                android:hint="搜索社区或兴趣话题"
+                                android:paddingLeft="@dimen/dip_10"
+                                android:textSize="13sp" />
+                        </LinearLayout>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="10dp"
+
+                            >
+
+                            <TextView
+
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/dip_5"
+                                android:padding="@dimen/dip_5"
+                                android:text="商务活动"
+                                android:textColor="#4D4D4D"
+                                android:textSize="@dimen/fond_14sp"
+                                android:layout_alignParentLeft="true"
+                                />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/dip_5"
+                                android:padding="@dimen/dip_5"
+                                android:text="more >>>  "
+                                android:textColor="@color/blue_title"
+                                android:textSize="@dimen/fond_14sp"
+                                android:layout_alignParentRight="true"
+                                android:id="@+id/busineseeactiview"
+
+                                />
+                        </RelativeLayout>
+
+                        <HorizontalScrollView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dip_10"
+                            android:layout_marginTop="@dimen/dip_10"
+                            android:paddingBottom="@dimen/dip_20"
+                            android:scrollbars="none">
+
+                            <LinearLayout
+                                android:id="@+id/view_dynamic_hader_HorizontalScrollView"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal" />
+                        </HorizontalScrollView>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dip_5"
+                            android:background="#F2F2F2" />
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="10dp"
+                            >
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/dip_5"
+                                android:padding="@dimen/dip_5"
+                                android:text="热门话题"
+                                android:textColor="#4D4D4D"
+                                android:textSize="@dimen/fond_14sp"
+                                android:layout_alignParentLeft="true"
+                                />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/dip_5"
+                                android:padding="@dimen/dip_5"
+                                android:text="more >>>  "
+                                android:textColor="@color/blue_title"
+                                android:textSize="@dimen/fond_14sp"
+                                android:layout_alignParentRight="true"
+                                android:id="@+id/tptopic"
+
+                                />
+                        </RelativeLayout>
+
+
+                        <com.maoyongxin.myapplication.ui.fgt.community.view.WarpLinearLayout
+                            android:id="@+id/view_dynamic_hader_WarpLinearLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="@dimen/dip_10"
+                            android:layout_marginRight="@dimen/dip_10"
+                            android:gravity="center_horizontal"
+                            android:orientation="horizontal" />
+
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dip_5"
+                            android:background="#F2F2F2" />
+                    </LinearLayout>
+
+
+                </android.support.design.widget.CollapsingToolbarLayout>
+            </android.support.design.widget.AppBarLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="vertical"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+                <LinearLayout
+                    android:id="@+id/ll_pop"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:elevation="1dp"
+                    android:layout_gravity="center_horizontal"
+                    android:gravity="center"
+
+                    android:padding="5dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/bg_radius_white"
+                    android:visibility="gone"
+
+                    >
+                    <!--android:background="@drawable/bg_radius_all_white"-->
+                    <com.maoyongxin.myapplication.view.SelectableRoundedImageView
+                        android:id="@+id/roudimgHead"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:scaleType="center"
+                        app:sriv_left_bottom_corner_radius="10dp"
+                        app:sriv_left_top_corner_radius="10dp"
+                        app:sriv_right_bottom_corner_radius="10dp"
+                        app:sriv_right_top_corner_radius="10dp"
+
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="3dp"
+                        android:layout_marginRight="3dp"
+                        android:text="动态+"/>
+                    <TextView
+                        android:id="@+id/cd_pop"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/red"
+                        android:layout_marginLeft="3dp"
+                        android:layout_marginRight="5dp"
+                        android:text="1" />
+                </LinearLayout>
+                <!--android:background="@drawable/bg_radius_all_white"-->
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:overScrollMode="never" />
+            </LinearLayout>
+        </android.support.design.widget.CoordinatorLayout>
+
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="end|bottom"
+        android:layout_margin="10dp"
+        app:cardBackgroundColor="@color/blue_tiny"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="2dp">
+        <ImageView
+            android:id="@+id/img_dongtai_floating"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center"
+            android:elevation="1dp"
+            android:src="@mipmap/add_float" />
+    </android.support.v7.widget.CardView>
+    <RelativeLayout
+        android:id="@+id/rl_popup_window"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:translationZ="@dimen/window_content_translation_z"
+        android:background="@drawable/shapbuttom"
+        android:visibility="gone"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dip_216"
+
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+            <com.maoyongxin.myapplication.tool.clickanimview.BamLinearLayout
+                android:id="@+id/phonto_image"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/dip_100"
+                    android:layout_height="@dimen/dip_100"
+                    android:src="@mipmap/i2" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:padding="@dimen/dip_5"
+                    android:text="图片"
+                    android:textColor="#FF333333"
+                    android:textSize="@dimen/fond_14sp" />
+            </com.maoyongxin.myapplication.tool.clickanimview.BamLinearLayout>
+
+
+            <com.maoyongxin.myapplication.tool.clickanimview.BamLinearLayout
+                android:id="@+id/phonto_video"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/dip_100"
+                    android:layout_height="@dimen/dip_100"
+                    android:src="@mipmap/i1" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="@dimen/dip_5"
+                    android:text="视频"
+                    android:textColor="#FF333333"
+                    android:textSize="@dimen/fond_14sp" />
+            </com.maoyongxin.myapplication.tool.clickanimview.BamLinearLayout>
+        </LinearLayout>
+
+
+
+
+    </RelativeLayout>
+</RelativeLayout>

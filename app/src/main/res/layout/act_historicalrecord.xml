@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dip_40"
+        android:background="@color/white">
+
+        <ImageView
+            android:id="@+id/friends_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dip_10"
+            android:padding="@dimen/dip_5"
+            android:src="@mipmap/icon_friends_back" />
+
+        <TextView
+            android:id="@+id/btn_conversation_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:background="@color/white"
+            android:text="历史记录"
+            android:textColor="@color/black_textview"
+            android:textSize="@dimen/textSize_big"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFEFF1F4">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dip_20"
+            android:background="@drawable/bg_qiye_bg3"
+            android:orientation="vertical"
+            android:padding="@dimen/dip_10">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dip_10"
+                    android:orientation="horizontal">
+
+                    <com.makeramen.roundedimageview.RoundedImageView
+                        android:id="@+id/mateHeadImg"
+                        android:layout_width="@dimen/dip_50"
+                        android:layout_height="@dimen/dip_50"
+                        android:scaleType="centerCrop"
+                        android:src="@mipmap/huangye"
+                        app:riv_border_color="#333333"
+                        app:riv_corner_radius="@dimen/dip_5"
+                        app:riv_mutate_background="true"
+                        app:riv_tile_mode="repeat" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dip_10"
+                        android:orientation="vertical"
+                        android:paddingTop="@dimen/dip_3">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/usrName"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="张萌萌"
+                                android:textColor="#FF333333"
+                                android:textSize="@dimen/fond_16sp"
+                                android:textStyle="bold" />
+
+                            <ImageView
+                                android:id="@+id/sex"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="@dimen/dip_5"
+                                android:background="@mipmap/icon_nv" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/user_id"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="@dimen/dip_5"
+                            android:text="ID:555"
+                            android:textColor="#FFA1A1A1"
+                            android:textSize="@dimen/fond_12sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/bt_chat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="@dimen/dip_10"
+                    android:background="@drawable/bg_radius_blue_tiny2"
+                    android:paddingLeft="@dimen/dip_8"
+                    android:paddingTop="@dimen/dip_2"
+                    android:paddingRight="@dimen/dip_8"
+                    android:paddingBottom="@dimen/dip_2"
+                    android:text="消息"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/fond_14sp" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dip_20"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/dip_20">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dip_5"
+                        android:layout_marginRight="@dimen/dip_10"
+                        android:text="今日电话"
+                        android:textColor="#FF666666"
+                        android:textSize="@dimen/fond_12sp" />
+
+                    <ProgressBar
+                        android:id="@+id/progressBarone"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="6dp"
+                        android:layout_margin="@dimen/album_dp_6"
+                        android:max="100"
+                        android:progress="20"
+                        android:progressDrawable="@drawable/bar_color" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dip_10"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dip_5"
+                        android:layout_marginRight="@dimen/dip_10"
+                        android:text="今日短信"
+                        android:textColor="#FF666666"
+                        android:textSize="@dimen/fond_12sp" />
+
+                    <ProgressBar
+                        android:id="@+id/progressBartwo"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="6dp"
+                        android:layout_margin="@dimen/album_dp_6"
+                        android:max="100"
+                        android:progress="15"
+                        android:progressDrawable="@drawable/bar_color" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dip_10"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dip_5"
+                        android:layout_marginRight="@dimen/dip_10"
+                        android:text="今日收藏"
+                        android:textColor="#FF666666"
+                        android:textSize="@dimen/fond_12sp" />
+
+                    <ProgressBar
+                        android:id="@+id/progressBarthree"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="6dp"
+                        android:layout_margin="@dimen/album_dp_6"
+                        android:max="100"
+                        android:progress="50"
+                        android:progressDrawable="@drawable/bar_color" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/dip_10">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/dip_10"
+            android:paddingBottom="@dimen/dip_10"
+            android:text="查询记录"
+            android:textColor="#FF333333"
+            android:textSize="@dimen/fond_14sp" />
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dip_1"
+            android:background="#FFEFF1F4" />
+        <ListView
+            android:id="@+id/callRecord_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:scrollbarStyle="outsideInset" />
+    </LinearLayout>
+
+</LinearLayout>

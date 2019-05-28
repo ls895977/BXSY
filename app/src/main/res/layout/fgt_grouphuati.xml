@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    android:orientation="vertical">
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/refreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:srlEnableLoadMoreWhenContentNotFull="true">
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/lv_huati"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+    <include
+    android:id="@+id/view_not"
+    layout="@layout/view_empty_data_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" />
+</LinearLayout>

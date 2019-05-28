@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:paddingTop="@dimen/dip_20">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dip_40"
+        android:background="@color/white">
+
+        <ImageView
+            android:id="@+id/friends_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dip_10"
+            android:padding="@dimen/dip_5"
+            android:src="@mipmap/icon_friends_back" />
+
+        <TextView
+            android:id="@+id/btn_conversation_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:background="@color/white"
+            android:text="收藏"
+            android:textColor="@color/black_textview"
+            android:textSize="@dimen/textSize_big"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dip_1"
+        android:background="#ECECEC" />
+
+    <com.maoyongxin.myapplication.view.ViewPagerDoubleIndicator
+        android:id="@+id/linTopindicator"
+        android:layout_width="@dimen/dip_180"
+        android:layout_height="@dimen/dip_50"
+        android:layout_marginLeft="@dimen/dip_10"
+        android:background="@null"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_renmai1"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@null"
+            android:gravity="center"
+            android:text="人脉"
+            android:textColor="@color/black_textview"
+            android:textSize="@dimen/textSize_normal"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btn_renmai_list1"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@null"
+            android:gravity="center"
+            android:text="公告需求"
+            android:textColor="@color/stroke_heavy"
+            android:textSize="@dimen/textSize_normal"
+            android:textStyle="bold" />
+    </com.maoyongxin.myapplication.view.ViewPagerDoubleIndicator>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dip_1"
+        android:layout_marginLeft="@dimen/dip_10"
+        android:layout_marginRight="@dimen/dip_10"
+        android:background="#ECECEC" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/remmai_viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:backgroundTint="@color/white" />
+</LinearLayout>

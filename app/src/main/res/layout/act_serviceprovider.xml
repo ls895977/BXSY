@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dip_40"
+        android:background="@color/white">
+
+        <ImageView
+            android:id="@+id/ServiceProvider_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dip_10"
+            android:padding="@dimen/dip_5"
+            android:src="@mipmap/icon_friends_back"
+            />
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dip_10"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/service_tv_help"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/ServiceProvider_back"
+                android:text="入驻彼信服务号"
+                android:layout_marginRight="@dimen/album_dp_10"
+                android:layout_gravity="center_vertical"
+                android:textColor="@color/blue_tiny"
+
+
+                />
+            <ImageView
+                android:id="@+id/ServiceProvider_seacher"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/album_dp_10"
+                android:padding="@dimen/dip_5"
+                android:src="@mipmap/icon_seacher" />
+
+            <ImageView
+                android:id="@+id/ServiceProvider_screen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/dip_5"
+                android:src="@mipmap/icon_screen" />
+        </LinearLayout>
+    </RelativeLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:background="#FFEFF1F4"
+        android:layout_height="@dimen/dip_01" />
+    <com.maoyongxin.myapplication.view.ViewPagerDoubleIndicator
+        android:id="@+id/linTopindicator"
+        android:layout_marginLeft="@dimen/dip_10"
+        android:layout_width="@dimen/dip_110"
+        android:layout_height="@dimen/dip_30"
+        android:layout_marginTop="@dimen/dip_10"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:paddingBottom="@dimen/dip_5"
+        android:layout_marginRight="@dimen/dip_10"
+        android:background="@null"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/btn_renmai"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@null"
+            android:gravity="center"
+            android:text="服务号"
+            android:textColor="@color/black_textview"
+            android:textSize="@dimen/textSize_normal"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btn_renmai_list"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@null"
+            android:gravity="center"
+            android:text="个人"
+            android:textColor="@color/stroke_heavy"
+            android:textSize="@dimen/textSize_normal"
+            android:textStyle="bold" />
+    </com.maoyongxin.myapplication.view.ViewPagerDoubleIndicator>
+    <TextView
+        android:layout_width="match_parent"
+        android:background="#FFEFF1F4"
+        android:layout_height="@dimen/dip_01" />
+    <android.support.v4.view.ViewPager
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="6dp"/>
+</LinearLayout>

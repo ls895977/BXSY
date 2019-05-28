@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dip_40"
+        android:background="@color/white">
+
+        <ImageView
+            android:id="@+id/ic_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dip_10"
+            android:padding="@dimen/dip_5"
+            android:src="@mipmap/icon_friends_back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:background="@color/white"
+            android:text="回复消息"
+            android:textColor="@color/black_textview"
+            android:textSize="@dimen/textSize_big"
+            android:textStyle="bold" />
+
+
+
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="15dp"
+        android:text="父级" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <io.github.rockerhieu.emojicon.EmojiconEditText
+            android:id="@+id/ed_huifu_d"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginBottom="20dp"
+
+            android:background="@null"
+            android:gravity="start"
+            android:hint="请输入您要回复的内容！"
+            android:minLines="10"
+            android:padding="@dimen/dip_10"
+            android:textColorHint="#FF999999"
+            android:textSize="@dimen/fond_14sp"
+
+            />
+        <RelativeLayout
+            android:id="@+id/moj_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="10dp"
+            android:padding="1dp">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@mipmap/ab1" />
+        </RelativeLayout>
+        <TextView
+            android:id="@+id/Ib_Dynamic"
+            android:layout_width="match_parent"
+
+            android:background="@drawable/bg_radius_blue_tiny2"
+            android:layout_marginBottom="@dimen/dp_40"
+            android:text="提交"
+            android:textColor="@color/white"
+            android:textSize="@dimen/fond_16sp"
+            android:paddingTop="@dimen/dip_10"
+            android:layout_marginLeft="@dimen/dip_20"
+            android:layout_marginRight="@dimen/dip_20"
+            android:paddingBottom="@dimen/dip_10"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            />
+
+        <EditText
+            android:id="@+id/ed_Dynamic_detail"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginBottom="60dp"
+            android:layout_weight="1"
+            android:background="@null"
+            android:gravity="start"
+            android:hint="回复一下..."
+            android:padding="15dp"
+            android:textSize="@dimen/textSize_normal"
+            android:visibility="gone" />
+
+
+
+        <FrameLayout
+            android:id="@+id/moj_view"
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            android:visibility="gone"></FrameLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/background"></LinearLayout>
+</LinearLayout>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources xmlns:tools="http://schemas.android.com/tools">
+    tools:ignore="MissingTranslation"
+    <string-array name="date" translatable="false" tools:ignore="ExtraTranslation">
+
+    </string-array>
+
+
+    <declare-styleable name="Picker" tools:ignore="MissingDefaultResource">
+        <attr name="textColor" format="color|reference"/>
+        <attr name="textSize" format="dimension"/>
+        <attr name="lineColor" format="color|reference"/>
+        <attr name="lineWidth" format="dimension"/>
+        <attr name="showItemNumber" format="integer"/>
+        <attr name="alphaPicked" format="float"/>
+        <attr name="alphaNormal" format="float"/>
+        <attr name="heightTimes" format="float"/>
+    </declare-styleable>
+
+    <declare-styleable name="StarView" tools:ignore="MissingDefaultResource">
+        <attr name="starNormal" format="reference"/>
+        <attr name="starSelected" format="reference"/>
+        <attr name="marginBetweenStars" format="dimension"/>
+    </declare-styleable>
+
+    <declare-styleable name="HeaderViewPager" tools:ignore="MissingDefaultResource">
+        <attr name="hvp_topOffset" format="dimension"/>
+    </declare-styleable>
+
+</resources>

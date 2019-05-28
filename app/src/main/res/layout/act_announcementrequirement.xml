@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:fitsSystemWindows="true"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dip_40"
+        android:orientation="horizontal"
+        android:background="#F2F2F2"
+        android:padding="@dimen/dip_5"
+        android:focusableInTouchMode="true"
+        android:focusable="true"
+        >
+        <ImageView
+            android:id="@+id/AnnouncementRequirement_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_centerVertical="true"
+            android:paddingLeft="@dimen/dip_10"
+            android:paddingRight="@dimen/dip_10"
+            android:src="@mipmap/icon_back" />
+
+        <EditText
+            android:id="@+id/AnnouncementRequirement_seacher"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:layout_marginRight="@dimen/dip_10"
+            android:background="@drawable/ms_seacher"
+            android:drawablePadding="@dimen/dip_5"
+            android:hint="请输入搜索内容"
+            android:drawableLeft="@mipmap/icon_seacher1"
+            android:paddingLeft="@dimen/dip_10"
+            android:textSize="@dimen/textSize_small" />
+
+        <ImageView
+            android:id="@+id/Announcement_screen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dip_5"
+            android:src="@mipmap/icon_screen" />
+        <TextView
+            android:id="@+id/AnnouncementRequirement_fabu"
+            android:layout_width="@dimen/dip_50"
+            android:layout_height="@dimen/dip_25"
+            android:gravity="center"
+            android:textSize="@dimen/fond_14sp"
+            android:layout_gravity="center"
+            android:textColor="@color/white"
+            android:background="@drawable/bg_radius_blue_tiny1"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:text="发布"
+            android:layout_marginLeft="@dimen/dip_5"
+            android:layout_marginRight="@dimen/dip_10"
+            android:src="@mipmap/icon_add" />
+    </LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="您发布的信息，会被同城优先推送哦 !"
+        android:textStyle="italic"
+        android:padding="@dimen/dip_2"
+        android:gravity="center"
+        />
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/refreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:srlEnableLoadMoreWhenContentNotFull="true">
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:overScrollMode="never" />
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+</LinearLayout>

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_create_group"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dip_40"
+        android:layout_marginTop="@dimen/dip_20"
+        android:background="@color/white">
+
+        <ImageView
+            android:id="@+id/friends_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dip_10"
+            android:padding="@dimen/dip_5"
+            android:src="@mipmap/icon_friends_back" />
+
+        <TextView
+            android:id="@+id/btn_conversation_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:background="@color/white"
+            android:text="创建群组"
+            android:textColor="@color/black_textview"
+            android:textSize="@dimen/textSize_big"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/group_img"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dip_160"
+            android:scaleType="centerCrop"
+            android:src="@drawable/tupian" />
+
+        <TextView
+            android:padding="@dimen/dip_5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="点击设置头像" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/dip_10">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="商会名称："
+            android:textColor="@color/text_normal"
+            android:textSize="@dimen/textSize_normal" />
+
+        <EditText
+            android:id="@+id/edit_groupName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:hint="请输入商会名称"
+            android:textColor="@color/text_normal"
+            android:textSize="@dimen/textSize_normal" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dip_10"
+        android:layout_gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="商会类型:" />
+
+        <TextView
+            android:id="@+id/tvGrouptype"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="商会大类" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/thick_divider_1px"
+        android:background="@color/rc_divider_line"></View>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="商会简介："
+        android:textColor="@color/text_normal"
+        android:textSize="@dimen/textSize_normal" />
+
+    <EditText
+        android:id="@+id/edit_group_content"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@null"
+        android:gravity="start"
+        android:hint="请输入商会描述"
+        android:padding="10dp"
+        android:textColor="@color/text_normal"
+        android:textSize="@dimen/textSize_normal" />
+
+    <Button
+        android:id="@+id/btn_create_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:background="@drawable/bg_radius_blue_tiny"
+        android:gravity="center"
+
+        android:text="创    建"
+        android:textColor="@color/white"
+        android:textSize="@dimen/textSize_normal" />
+</LinearLayout>

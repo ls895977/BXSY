@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:fitsSystemWindows="true"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="10dp"
+                android:elevation="1dp"
+                android:layout_gravity="right"
+                >
+                <com.maoyongxin.myapplication.view.SelectableRoundedImageView
+                    android:id="@+id/headimg"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+
+
+                    android:elevation="3dp"
+                    android:scaleType="fitCenter"
+                    android:src="@mipmap/user_head_img"
+                    app:sriv_left_bottom_corner_radius="50dp"
+                    app:sriv_left_top_corner_radius="50dp"
+                    app:sriv_right_bottom_corner_radius="50dp"
+                    app:sriv_right_top_corner_radius="50dp" />
+                <TextView
+                    android:id="@+id/reedit_head"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+
+
+                    android:background="@drawable/tv_bg_bg"
+                    android:padding="3dp"
+                    android:text="更换头像"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/fond_13sp"
+                    />
+
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/back_img"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@mipmap/icon_bg1"
+                android:scaleType="centerCrop"
+
+                />
+
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/reedit_backimg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_margin="10dp"
+            android:padding="3dp"
+            android:background="@drawable/tv_bg_bg"
+
+            android:text="修改背景图"
+            android:textColor="@color/white"
+            android:textSize="@dimen/fond_13sp"
+            android:layout_gravity="left"
+
+            />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="30dp"
+            android:text="一句话介绍："
+            android:textColor="@color/text_black_color" />
+
+        <EditText
+            android:id="@+id/user_resource"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_margin="10dp"
+            android:background="@color/white_somoke"
+            android:gravity="start"
+            android:hint="当其他用户需要查找资源的时候，本内容会被优先匹配（20字以内）"
+            android:lines="2"
+            android:maxLength="40"
+            android:padding="5dp"
+            android:textColorHint="@color/text_deco"
+            android:textSize="@dimen/textSize_small" />
+
+    </LinearLayout>
+
+    <com.maoyongxin.myapplication.tool.clickanimview.BamButton
+        android:id="@+id/dologin"
+        android:layout_width="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|bottom"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/bg_radius_blue_tiny"
+        android:clickable="false"
+        android:paddingLeft="50dp"
+        android:paddingTop="5dp"
+        android:paddingRight="50dp"
+        android:paddingBottom="5dp"
+        android:text="进入彼信"
+        android:textColor="@color/white"
+        />
+
+</RelativeLayout>
