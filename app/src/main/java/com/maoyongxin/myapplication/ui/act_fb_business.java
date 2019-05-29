@@ -18,6 +18,7 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -30,6 +31,7 @@ import com.maoyongxin.myapplication.R;
 import com.maoyongxin.myapplication.bean.ClassifyApiBean;
 import com.maoyongxin.myapplication.common.BaseAct;
 import com.maoyongxin.myapplication.common.ComantUtils;
+import com.maoyongxin.myapplication.common.MyApplication;
 import com.maoyongxin.myapplication.permission.RxPermissions;
 import com.maoyongxin.myapplication.tool.MyGlideEngine;
 import com.maoyongxin.myapplication.tool.TimeAddTool;
@@ -56,6 +58,8 @@ import com.zhy.http.okhttp.callback.Callback;
 import com.zhy.http.okhttp.callback.StringCallback;
 import com.zyao89.view.zloading.ZLoadingDialog;
 import com.zyao89.view.zloading.Z_TYPE;
+
+import org.json.JSONObject;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -84,9 +88,13 @@ public class act_fb_business extends BaseAct implements TimeAddTool.onBackDateTi
     private Button business_push;
     private Bundle detailImg;
     private String BusinessImgUrl;
-
+    private EditText businessThame,business_admin_organ,business_adress,business_intro,business_contact,business_email;
     private static final int REQUEST_CODE_CHOOSE = 23;//定义请求码常量
     private static final int REQUEST_CODE_Detail = 22;//定义请求码常量
+    private String  Businessdate,Businesstime,areaCode,cityNmae;
+    private  String imgurl,topImgUrl;
+    private TextView myBusiness;
+
 
     @Override
     protected void handlerPassMsg(int target, int target1, Object obj) {
@@ -100,6 +108,7 @@ public class act_fb_business extends BaseAct implements TimeAddTool.onBackDateTi
 
     @Override
     public void initView() {
+        myBusiness=getViewAndClick(R.id.myBusiness);
         business_push = getViewAndClick(R.id.business_push);
         tv_typechoic = getViewAndClick(R.id.tv_typechoic);
         business_strtTime = getViewAndClick(R.id.business_strtTime);
@@ -107,6 +116,14 @@ public class act_fb_business extends BaseAct implements TimeAddTool.onBackDateTi
         tv_adresschoice = getViewAndClick(R.id.tv_adresschoice);
         businessImg = getViewAndClick(R.id.businessImg);
         business_detailEdit = getViewAndClick(R.id.business_detailEdit);
+        businessThame=getView(R.id.businessThame);
+        business_adress=getView(R.id.business_adress);
+        business_intro=getView(R.id.business_intro);
+        business_admin_organ=getView(R.id.business_admin_organ);
+        business_contact=getView(R.id.business_contact);
+        business_email=getView(R.id.business_email);
+
+
 
         rxPermissions = new RxPermissions(getActivity());
         hotCities = new ArrayList<>();
@@ -159,7 +176,67 @@ public class act_fb_business extends BaseAct implements TimeAddTool.onBackDateTi
 
         switch (v.getId()) {
 
+            case R.id.myBusiness:
+
+                startActivity(new Intent(getActivity(),act_mybusiness.class));
+
+                break;
+
             case R.id.business_push:
+
+
+                if (TextUtils.isEmpty(topImgUrl)) {
+                    MyToast.show(context, "请上传一张活动主题图片！");
+                    return;
+                }
+             if (TextUtils.isEmpty(businessThame.getText().toString())) {
+                    MyToast.show(context, "请输入您的活动主题！");
+                    return;
+                }
+                if (TextUtils.isEmpty(business_admin_organ.getText().toString())) {
+                    MyToast.show(context, "请输入活动主办方！");
+                    return;
+                }
+                if (TextUtils.isEmpty(classify_id)) {
+                    MyToast.show(context, "请选择活动类型！");
+                    return;
+                }
+
+
+
+                if (TextUtils.isEmpty(business_strtDate.getText().toString())||TextUtils.isEmpty(business_strtTime.getText().toString())) {
+                    MyToast.show(context, "请设置活动举办时间");
+                    return;
+                }
+                if (TextUtils.isEmpty(tv_adresschoice.getText().toString())) {
+                    MyToast.show(context, "请输入举办城市！");
+                    return;
+                }
+
+                if (TextUtils.isEmpty(business_adress.getText().toString())) {
+                    MyToast.show(context, "请键入详细地址！");
+                    return;
+                }
+
+                if (TextUtils.isEmpty(imgurl)) {
+                    MyToast.show(context, "请编辑一下活动详情页！");
+                    return;
+                }
+
+                if (TextUtils.isEmpty(business_contact.getText().toString())) {
+                    MyToast.show(context, "联系电话不能少哦！亲");
+                    return;
+                }
+                if (TextUtils.isEmpty(business_email.getText().toString())) {
+                    MyToast.show(context, "邮箱很重要哦！");
+                    return;
+                }
+
+
+
+
+
+
 
                 postBusiness();
                 break;
@@ -216,6 +293,10 @@ public class act_fb_business extends BaseAct implements TimeAddTool.onBackDateTi
                         .setOnPickListener(new OnPickListener() {
                             @Override
                             public void onPick(int position, City data) {
+
+                                areaCode=data.getCode();
+                                cityNmae=data.getName();
+
                                 tv_adresschoice.setText(String.format("举办城市：%s", data.getName()));
                                 Toast.makeText(
                                         getApplicationContext(),
@@ -251,7 +332,7 @@ public class act_fb_business extends BaseAct implements TimeAddTool.onBackDateTi
     @Override
     public void backDate(String date) {
         business_strtDate.setText(date);
-
+        Businessdate=date;
     }
 
     @Override
@@ -262,13 +343,15 @@ public class act_fb_business extends BaseAct implements TimeAddTool.onBackDateTi
     @Override
     public void backItem(int options) {
         tv_typechoic.setText(typeBean.getInfo().get(options).getName());
+        classify_id="";
         classify_id = typeBean.getInfo().get(options).getId() + "";
     }
 
 
     public void postBackType() {
         typeData.clear();
-        OkHttpUtils.get().url(ComantUtils.MyUrlHot + ComantUtils.getClassifyApi)
+        OkHttpUtils.get().url(ComantUtils.MyUrlHot + ComantUtils.getClassifyApil)
+                .addParams("type","4")
                 .build().execute(new StringCallback() {
             @Override
             public void onError(Call call, Exception e, int id) {
@@ -291,6 +374,8 @@ public class act_fb_business extends BaseAct implements TimeAddTool.onBackDateTi
     public void backItem(int options, int options1) {
 
         business_strtTime.setText(startnoon.get(options) + startTime.get(options1));
+
+        Businesstime=startnoon.get(options)+startTime.get(options1)+"";
 
     }
 
@@ -326,7 +411,7 @@ public class act_fb_business extends BaseAct implements TimeAddTool.onBackDateTi
             } else if (requestCode == REQUEST_CODE_Detail) {
                 if (resultCode == Activity.RESULT_OK) { // 对应B里面的标志为成功
                     detailImg = data.getExtras();
-                    String imgurl = detailImg.getString("content");
+                      imgurl = detailImg.getString("content");
                     Log.e("aa", "-----------返回值===" + imgurl);
                 }
 
@@ -398,6 +483,9 @@ public class act_fb_business extends BaseAct implements TimeAddTool.onBackDateTi
                         imageBean = gons.fromJson(succeed, UploadImageBean.class);
                         if (imageBean.getMsg().contains("上传成功！")) {
                             Glide.with(context).load(ComantUtils.MyUrlHot1 + imageBean.getUrl().get(0)).into(businessImg);
+
+                            topImgUrl=imageBean.getUrl().get(0);
+
                             BusinessImgUrl = imageBean.getUrl().get(0);
                         }
                     }
@@ -423,32 +511,48 @@ public class act_fb_business extends BaseAct implements TimeAddTool.onBackDateTi
     private void postBusiness() {
 
         OkHttpUtils.post().url("http://bisonchat.com/index/commerce_activity/createCommerceActivityApi.html")
-                .addParams("img", "")
-                .addParams("activity_title", "")
-                .addParams("type_id", "")
-                .addParams("admin_organ", "")
-                .addParams("activity_time", "")
-                .addParams("activity_site", "")
-                .addParams("activity_intro", "")
-                .addParams("phone", "")
-                .addParams("email", "")
-                .addParams("activity_guests", "")
+
+                .addParams("uid", MyApplication.getCurrentUserInfo().getUserId())
+                .addParams("img", imageBean.getUrl().get(0))
+                .addParams("activity_title", businessThame.getText().toString())
+                .addParams("type_id", classify_id)
+                .addParams("admin_organ", business_admin_organ.getText().toString())
+                .addParams("activity_time", Businessdate+Businesstime)
+                .addParams("activity_site", business_adress.getText().toString())
+                .addParams("activity_intro",imgurl)
+                .addParams("phone", business_contact.getText().toString())
+                .addParams("email", business_email.getText().toString())
+                .addParams("area_code",  areaCode)
+                .addParams("city_name", cityNmae)
+
 
 
                 .build().execute(new Callback() {
             @Override
             public Object parseNetworkResponse(Response response, int id) throws Exception {
+                try {
+                    JSONObject data=new JSONObject(response.body().string());
+
+
+
+                }catch (Exception e)
+                {
+
+                }
+                MyToast.show(context, "活动创建成功，请等待审核");
+                startActivity(new Intent(getActivity(),act_mybusiness.class));
                 return null;
             }
 
             @Override
             public void onError(Call call, Exception e, int id) {
-
+                e.printStackTrace();
             }
 
             @Override
             public void onResponse(Object response, int id) {
-
+                MyToast.show(context, "活动创建成功，请等待审核");
+                startActivity(new Intent(getActivity(),act_mybusiness.class));
             }
         });
 

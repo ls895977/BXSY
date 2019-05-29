@@ -20,13 +20,15 @@ public class ComantUtils {
 
     public static String addUserNoticeApi = "/user_notice/addUserNoticeApi";//人脉=服务商=公告需求=发布需求
 
+    public static String getClassifyApil = "/classify/getClassifyApi.html";//人脉=服务商=公告需求=发布需求
+
     public static String getUserNoticeDetailsApi = "/user_notice/getUserNoticeDetailsApi";//人脉=服务商=公告需求=需求详情
     public static String getUserNoticePostListApi = "/user_notice_post/getUserNoticePostListApi";//人脉=服务商=公告需求=评论列表信息
 
     public static String enterprise_info_search = "/enterprise_info/enterprise_info_search";//人脉=服务商详情搜索
 
     public static String enterprise_info_get ="/enterprise_info/enterprise_info.html";
-
+    public static String getmybusinessList ="/commerce_activity/getUidByActivityListApi.html";
 
     public static String addUserNoticePostApi = "/user_notice_post/addUserNoticePostApi";//人脉=服务商=公告需求=评论回复
     public static String deleteUserNoticePost = "/user_notice_post/deleteUserNoticePostApi";//人脉=服务商=公告需求=评论删除

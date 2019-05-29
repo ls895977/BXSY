@@ -7,6 +7,7 @@ import android.widget.RelativeLayout;
 
 
 import com.maoyongxin.myapplication.R;
+import com.maoyongxin.myapplication.ui.act_businessDetail;
 import com.maoyongxin.myapplication.ui.fgt.community.fgt.Fgt_Dynamic;
 import com.maoyongxin.myapplication.ui.fgt.message.act.Act_StrangerDetail;
 
@@ -19,6 +20,7 @@ public class BlurUtil {
 
     private Act_StrangerDetail mActivity;
     private Fgt_Dynamic FgtDymic;
+    private act_businessDetail BusinessActivity;
     /**
      * 工具箱
      */
@@ -28,6 +30,11 @@ public class BlurUtil {
      * 构造
      * @param activity
      */
+    public BlurUtil(act_businessDetail activity) {
+        this.BusinessActivity = activity;
+        utils = UtilBox.getBox();
+    }
+
     public BlurUtil(Act_StrangerDetail activity) {
         this.mActivity = activity;
         utils = UtilBox.getBox();
@@ -46,6 +53,11 @@ public class BlurUtil {
         // 将图片进行高斯模糊，
         // 最后一个参数是模糊等级，值为 0~25
         utils.bitmap.blurImageView(mActivity, iv_head_portrait, level);
+    }
+    public void BusinessBlurImg(ImageView iv_head_portrait ,float level) {
+        // 将图片进行高斯模糊，
+        // 最后一个参数是模糊等级，值为 0~25
+        utils.bitmap.blurImageView(BusinessActivity, iv_head_portrait, level);
     }
 
     public void fgt_clickBlurImg(ImageView iv_head_portrait ,float level) {

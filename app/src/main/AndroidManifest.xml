@@ -57,7 +57,9 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme"
         tools:replace="android:allowBackup">
-        <activity android:name=".ui.act_business_detailEdit"></activity>
+        <activity android:name=".ui.act_businessDetail"></activity>
+        <activity android:name=".ui.act_mybusiness" />
+        <activity android:name=".ui.act_business_detailEdit" />
         <activity android:name=".ui.act_business_adress" />
         <activity
             android:name=".ui.act_fb_business"

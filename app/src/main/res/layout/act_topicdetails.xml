@@ -166,7 +166,7 @@
                                 app:riv_tile_mode="repeat" />
 
                             <io.github.rockerhieu.emojicon.EmojiconTextView
-                                android:id="@+id/context"
+                                android:id="@+id/tvContext"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="@dimen/dip_10"

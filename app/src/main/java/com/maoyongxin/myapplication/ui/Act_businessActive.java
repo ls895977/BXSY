@@ -34,7 +34,7 @@ import java.util.List;
 public class Act_businessActive extends BaseAct {
 
 
-    private static final String[] CHANNELS = new String[]{"精选", "发布会","行业峰会", "培训","政企对接" };
+    private static final String[] CHANNELS = new String[]{"精选","项目路演", "发布会","行业峰会", "培训","政企活动" };
     private List<String> mDataList = Arrays.asList(CHANNELS);
     private ViewPager mViewPager;
     private MainPagerAdapter mainPagerAdapter;
